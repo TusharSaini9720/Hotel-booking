@@ -96,8 +96,8 @@ function Details(props) {
       },
     },
   };
-  // const url=`http://localhost:3000/api/v1/hotels/${useParams().hotel_id}`;
-  const url=`/api/v1/hotels/${hotel_id}`;
+ 
+  const url=`https://hotel-booking-sp0k.onrender.com/api/v1/hotels/${hotel_id}`;
 
   React.useEffect(() => {
     // fetchdetails();
