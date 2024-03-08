@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Cardforreviews from "../Cards/cardforreviews";
 
 function Rating(props) {
-  console.log("in rating ",props);
+  //console.log("in rating ",props);
   const { innerWidth: width, innerHeight: height } = window;
 
   var settings = {

@@ -18,7 +18,7 @@ function Hotellist(props) {
   const [destinationId, setdestinationId] = React.useState("");
   const [hotelslist, sethotelslist] = React.useState(["load"]);
   const [placename, setplacename] = React.useState("");
-  console.log("props.filters",props.filters);
+ // console.log("props.filters",props.filters);
 const url='/api/v1/hotels?country=India';
   // React.useEffect(() => {
   //   fetchid();
@@ -26,7 +26,7 @@ const url='/api/v1/hotels?country=India';
   React.useEffect(() => {
     axios({method:'GET',url:url, params: props.filters})
     .then((res)=>{
-      console.log("res.data.data.Hotels",res.data.data.Hotels)
+     // console.log("res.data.data.Hotels",res.data.data.Hotels)
       sethotelslist(res.data.data.Hotels);
     }).catch((err)=>{
       sethotelslist(["notfound"]);

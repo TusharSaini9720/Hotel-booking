@@ -2,7 +2,7 @@ import React from "react";
 import parse from "html-react-parser";
 import Bookingform from './bookingform'
 function Header(props) {
-  console.log("props", props);
+  //console.log("props", props);
   return (
     <div className="header">
       <div>

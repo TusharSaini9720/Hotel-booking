@@ -18,9 +18,9 @@ const upload=multer({
 exports.uploadHotelPhoto = upload.array("image",2);
 
 exports.resizeHotelPhoto=async(req,res,next)=>{
-    console.log(req.files);
+    //console.log(req.files);
     if(!req.files){
-        console.log("in ! condition");
+       // console.log("in ! condition");
         return next();}
 
     // req.files.filename=`user-${req.params.id}-${Date.now()}.jpeg`;
@@ -40,7 +40,7 @@ exports.resizeHotelPhoto=async(req,res,next)=>{
     .toFile(`dev_data/hotels/${filename}`);
     req.body.image.push(filename);
 }))
-console.log("after map ");
+//console.log("after map ");
     next();
 }
 // upload.field({name:"image",6},{name:}); it use for adding different images means for different parts
@@ -183,7 +183,7 @@ exports.hotelswithin=async(req,res)=>{
     //console.log(distance,lat,lng,unit);
     const radius=unit==='mil'?distance/3963.2:distance/6378.1;
     //console.log(radius);
-    if(!lng||!lat)console.log("inlng ");
+   // if(!lng||!lat)console.log("inlng ");
     const hotels=await Hotel.find({
         location:{$geoWithin:{$centerSphere:[[lng,lat],radius]}}
     })
@@ -211,7 +211,7 @@ exports.hotelsposition=async(req,res)=>{
    // const radius=unit==='mil'?distance/3963.2:distance/6378.1;
    const multipler=unit==='mil'?0.000621371:0.001;
    // console.log(radius);
-    if(!lng||!lat)console.log("inlng ");
+   // if(!lng||!lat)console.log("inlng ");
 
     const distances=await Hotel.aggregate([
          {

@@ -64,6 +64,6 @@ const createBookingCheckout = async (session) => {
   
     if (event.type === "checkout.session.completed")
       createBookingCheckout(event.data.object);
-    console.log("it is working");
+    //console.log("it is working");
     res.status(200).json({ received: true });
   };

@@ -69,7 +69,7 @@ const reviewschema=new mongoose.Schema({
   });
 
   reviewschema.statics.calcAverageRating=async function(hotelId){
-    console.log(hotelId);
+    //console.log(hotelId);
     const stats=await this.aggregate([
         {
             $match:{hotel:hotelId}
@@ -92,7 +92,7 @@ const reviewschema=new mongoose.Schema({
             }
         }
     ]);
-    console.log(stats);
+   // console.log(stats);
    if(stats.length>0){ await Hotel.findByIdAndUpdate(hotelId,{
         ratingAverage:stats[0].avgRating,
         ratingsQuantity:stats[0].nRating,
@@ -134,12 +134,12 @@ const reviewschema=new mongoose.Schema({
   reviewschema.pre(/^findOneAnd/, async function(next) {
     // Accessing the query being executed
    try{  this.r=await this.findOne().clone();
-   console.log("in pre");
+   //console.log("in pre");
    //this.r = await Review.findById({ _id: req.params.id });
-    console.log("this.r ",this.r);
-    console.log("Query:", this.getQuery());   
-    // Accessing the update being applied (if applicable)
-    console.log("Update:", this.getUpdate());
+    // console.log("this.r ",this.r);
+    // console.log("Query:", this.getQuery());   
+    // // Accessing the update being applied (if applicable)
+    // console.log("Update:", this.getUpdate());
     // Proceed to the next middleware in the chain
     next();}
     catch(err){
@@ -147,7 +147,7 @@ const reviewschema=new mongoose.Schema({
     }
 });
   reviewschema.post(/^findOneAnd/,async function(){ 
-    console.log('inpost',this.r.hotel);
+   // console.log('inpost',this.r.hotel);
          await this.r.constructor.calcAverageRating(this.r.hotel) 
   })
   

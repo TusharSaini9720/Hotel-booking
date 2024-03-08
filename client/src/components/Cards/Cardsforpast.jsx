@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 
 function Cardforpast(props) {
-  console.log("history",props.history);
+ // console.log("history",props.history);
   const deleteCard = (e) => {
     e.preventDefault();
     e.target.parentElement.parentElement.style.display = "none";

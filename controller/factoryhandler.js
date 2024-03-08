@@ -5,7 +5,7 @@ exports.deleteOne=Model=>{
         try{
             
             const doc=await Model.findByIdAndDelete(req.params.id);
-            console.log("doc",doc);
+            //console.log("doc",doc);
             res.status(200).json({
                 status:'success',
                 doc

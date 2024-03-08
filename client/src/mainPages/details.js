@@ -16,7 +16,7 @@ function Details(props) {
   //console.log("detail",)
   let history = [];
   const location = useLocation();
-  console.log("location",location.state);
+  //console.log("location",location.state);
   const {
     name,
     startdate,

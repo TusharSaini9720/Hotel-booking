@@ -23,7 +23,7 @@ const createSendToken = async(user, statusCode, res) => {
   user.password = undefined;
   //console.log(res.headers);
   try {
-    console.log("in email try block")
+   // console.log("in email try block")
     await sendEmail({
       email: user.email,
       subject: `Sign up successfully on WebMaker Keep growing`,
@@ -57,7 +57,7 @@ Thank you for choosing Hotel Booking Guide. We're excited to help you plan your 
 };
 
 const signToken = id => {
-  console.log("process.env.JWT_SECRET ",process.env.JWT_SECRET);
+  //console.log("process.env.JWT_SECRET ",process.env.JWT_SECRET);
   return jwt.sign({ id }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN,
   });
@@ -359,12 +359,12 @@ exports.deleteMe = async (req, res) => {
   });
 };
 exports.protect = async (req, res, next) => {
-  console.log("in protect");
+ // console.log("in protect");
   //1.Getting token and check if it's there
   let token;
   let freshUser;
   let decodedToken;
-  console.log(req.cookies.jwt);
+ // console.log(req.cookies.jwt);
   if (
     req.headers.authorization &&
     req.headers.authorization.startsWith('Bearer')
@@ -374,7 +374,7 @@ exports.protect = async (req, res, next) => {
   else{
     token = req.cookies.jwt;
   }
-  console.log("after token",token);
+ // console.log("after token",token);
 
   if (!token) {
     res.status(400).json({

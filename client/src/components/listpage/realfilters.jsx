@@ -16,11 +16,11 @@ function Realfilters(props) {
           : "," + el.children[0].value;
     return 0;
   });
-    console.log("newString",newString)
+   // console.log("newString",newString)
   const prevObj = { ...props.filters };
   if (newString.length === 0) delete prevObj[e.target.name];
   else prevObj[e.target.name] = newString;
-     console.log("prevObj",prevObj);
+    // console.log("prevObj",prevObj);
   props.setfilters(prevObj);
 };
   const clickforguestsrating = (e) => {
