@@ -50,7 +50,19 @@ app.use(hpp());
 //to get data of requests body and limiting it to maximum 10kb
 app.use(express.json({ limit: "10kb" }));
 // app.use(cors());
-app.use(cors({credentials: true,  origin: 'https://hotel-booking-sp0k.onrender.com'}));
+//app.use(cors({credentials: true,  origin: 'https://hotel-booking-sp0k.onrender.com'}));
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', '*');
+
+  next();
+});
+const corsOption = {
+  origin: ['https://hotel-booking-sp0k.onrender.com'],
+  credentials: true,
+  methods: ["GET", "POST", "PATCH", "DELETE"],
+}
+app.use(cors(corsOption));
 
 app.post(
   "/webhooks",
