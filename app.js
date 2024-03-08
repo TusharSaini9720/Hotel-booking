@@ -44,9 +44,6 @@ app.use(mongoSanitize());
 app.use(xss());
 
 app.use(hpp());
-
-
-
 //to get data of requests body and limiting it to maximum 10kb
 app.use(express.json({ limit: "10kb" }));
 // app.use(cors());
@@ -63,6 +60,15 @@ const corsOption = {
   methods: ["GET", "POST", "PATCH", "DELETE"],
 }
 app.use(cors(corsOption));
+app.use(
+  helmet.contentSecurityPolicy({
+    useDefaults: true,
+    directives: {
+      scriptSrc: ["'self'", "https://js.stripe.com"],
+      frameSrc: ["self", "https://js.stripe.com", "https://hooks.stripe.com"],
+    },
+  })
+);
 
 app.post(
   "/webhooks",
