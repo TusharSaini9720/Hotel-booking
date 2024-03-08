@@ -5,7 +5,7 @@ import axios from "axios";
 
 function Popular() {
   const [hotel,sethotel]=useState([]);
-  const url='http://localhost:3000/api/v1/hotels';
+  const url='/api/v1/hotels';
   useEffect(()=>{
     axios({method:'GET', url:url,params: {
       country: 'India'

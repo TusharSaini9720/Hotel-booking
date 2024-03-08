@@ -11,7 +11,7 @@ const Bookingform = (props) => {
         "pk_test_51OrD70SJPRmiPsja8R3iXW3hubdabffkpqewHOaldBA9VnWO2NPnULeJ3sJjrPeLdfLoae9Ccx0iCZwQJy6i0Rs200rSWPSWc1"
       );
     
-      const url = `http://localhost:3000/api/v1/booking/checkout-session/${props.hotelid}`;
+      const url = `/api/v1/booking/checkout-session/${props.hotelid}`;
     
       const handleClick = async () => {
         if (!props.signedIn) {

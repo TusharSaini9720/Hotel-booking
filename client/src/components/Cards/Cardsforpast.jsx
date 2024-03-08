@@ -10,7 +10,7 @@ function Cardforpast(props) {
     e.target.parentElement.parentElement.style.display = "none";
     var optionsforhistory = {
       method: "DELETE",
-      url: "http://localhost:3000/api/v1/users/deleteHistory",
+      url: "/api/v1/users/deleteHistory",
       headers: {
         "Authorization":`Bearer ${props.token}`,
         "Content-Type": "application/json",

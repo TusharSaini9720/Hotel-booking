@@ -19,7 +19,7 @@ function Hotellist(props) {
   const [hotelslist, sethotelslist] = React.useState(["load"]);
   const [placename, setplacename] = React.useState("");
   console.log("props.filters",props.filters);
-const url='http://localhost:3000/api/v1/hotels?country=India';
+const url='/api/v1/hotels?country=India';
   // React.useEffect(() => {
   //   fetchid();
   // }, [query]);

@@ -78,7 +78,7 @@ function Details(props) {
 
   var optionsforhistory = {
     method: "PATCH",
-    url: "http://localhost:3000/api/v1/users/addHistory",
+    url: "/api/v1/users/addHistory",
     headers: {
       "Authorization":`Bearer ${props.token}`,
       "Content-Type": "application/json",
