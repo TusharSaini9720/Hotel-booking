@@ -23,13 +23,8 @@ const limiter = rateLimit({
 });
 app.use(express.json());
 const path = require("path");
+__dirname = path.resolve();
 const bookingRoutes = require("./routes/bookingRoutes");
-
-app.use(express.static(path.join(__dirname, "/client/build")));
-
-app.get("*", (req, res) =>
-  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
-);
 
 //limiting requests from same api
 app.use("/api/v1/users", limiter); //also if app get crashed it will automatically set limit to max
@@ -47,18 +42,7 @@ app.use(hpp());
 //to get data of requests body and limiting it to maximum 10kb
 // app.use(cors());
 //app.use(cors({credentials: true,  origin: 'https://hotel-booking-sp0k.onrender.com'}));
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', '*');
-
-  next();
-});
-const corsOption = {
-  origin: ['https://hotel-booking-sp0k.onrender.com'],
-  credentials: true,
-  methods: ["GET", "POST", "PATCH", "DELETE"],
-}
-app.use(cors(corsOption));
+app.use(cors({ origin: "*" }));
 app.use(
   helmet.contentSecurityPolicy({
     useDefaults: true,
@@ -85,7 +69,13 @@ app.use(compression());
 app.use('/api/v1/hotels',hotelrouter);
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/reviews", reviewRouter);
-app.use("/api/v1/booking",bookingRouter)
+app.use("/api/v1/booking",bookingRouter);
+
+app.use(express.static(path.join(__dirname, "/client/build")));
+
+app.get("*", (req, res) =>
+  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+);
 
 app.get("*", (req, res) => {
   res.redirect(`${req.protocol}://${req.get("host")}`);
