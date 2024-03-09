@@ -21,7 +21,7 @@ const limiter = rateLimit({
   windowMs: 60 * 60 * 1000,
   message: "Too many requests from this IP.Please try after one hour",
 });
-
+app.use(express.json());
 const path = require("path");
 const bookingRoutes = require("./routes/bookingRoutes");
 
@@ -45,7 +45,6 @@ app.use(xss());
 
 app.use(hpp());
 //to get data of requests body and limiting it to maximum 10kb
-app.use(express.json({ limit: "10kb" }));
 // app.use(cors());
 //app.use(cors({credentials: true,  origin: 'https://hotel-booking-sp0k.onrender.com'}));
 app.use((req, res, next) => {
