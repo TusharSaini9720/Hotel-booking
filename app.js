@@ -42,19 +42,16 @@ app.use(hpp());
 //to get data of requests body and limiting it to maximum 10kb
 // app.use(cors());
 //app.use(cors({credentials: true,  origin: 'https://hotel-booking-sp0k.onrender.com'}));
-
-
-app.use(cors({ origin: '*' }));
+app.use(cors({ origin: "*" }));
 app.use(
   helmet.contentSecurityPolicy({
     useDefaults: true,
     directives: {
-      scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://js.stripe.com"],
-      frameSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://js.stripe.com", "https://hooks.stripe.com"],
+      scriptSrc: ["'self'", "https://js.stripe.com"],
+      frameSrc: ["self", "https://js.stripe.com", "https://hooks.stripe.com"],
     },
   })
 );
-
 
 app.post(
   "/webhooks",
