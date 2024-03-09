@@ -53,6 +53,10 @@ app.use(
   })
 );
 
+app.use(helmet.crossOriginOpenerPolicy());
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
+app.use(helmet.hidePoweredBy());
+
 app.post(
   "/webhooks",
   express.raw({ type: "application/json" }),

@@ -2,7 +2,6 @@
   "name": "hotel_booking",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://hotel-booking-sp0k.onrender.com",
   "dependencies": {
     "@babel/runtime": "^7.15.4",
     "@stripe/react-stripe-js": "^2.5.1",
