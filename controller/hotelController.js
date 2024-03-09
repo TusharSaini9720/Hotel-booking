@@ -112,7 +112,6 @@ class APIFeatures{
     }
 }
 exports.getallhotel=async(req,res)=>{
-console.log("in getallhotel func");
     try{
          const features = new APIFeatures(Hotel.find(), req.query)
          .filter()
