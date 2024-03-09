@@ -33,7 +33,7 @@ const Bookingform = (props) => {
               }
             // data: { startingDate, services },
           });
-    
+       console.log("before stripe", Session);
           const stripe = await stripePromise;
           stripe.redirectToCheckout({ sessionId: Session.data.session.id });
           setstate("Book Now");

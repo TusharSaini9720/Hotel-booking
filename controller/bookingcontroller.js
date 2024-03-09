@@ -8,8 +8,8 @@ exports.getcheckoutSession=async(req,res)=>{
   const session=await stripe.checkout.sessions.create({
     payment_method_types:['card'],
      mode: 'payment',
-    success_url:`${req.protocol}://3001/?hotel=${req.params.hotelid}&user=${req.user.id}&price=${hotel.totalPrice}`,
-    cancel_url:`${req.protocol}://3001/${req.params.hotelid}`,
+    success_url:`${req.protocol}://${req.get("host")}`,
+    cancel_url:`${req.protocol}://${req.get("host")}/${req.params.hotelid}`,
     customer_email:req.user.email,
     client_reference_id:req.params.hotelid,
     line_items: [{
