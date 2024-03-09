@@ -45,7 +45,7 @@ app.use(hpp());
 const helmet = require('helmet');
 const cors = require('cors');
 
-app.use(cors({ origin: true }));
+app.use(cors({ origin: '*' }));
 app.use(
   helmet.contentSecurityPolicy({
     useDefaults: true,
