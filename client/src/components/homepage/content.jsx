@@ -15,8 +15,8 @@ function Content(props) {
       <hr style={{ width: "100%" }} />
       <Popular />
       <hr style={{ width: "100%" }} />
-      <World />
-      <hr style={{ width: "100%" }} />
+      {/* <World />
+      <hr style={{ width: "100%" }} /> */}
     </div>
   );
 }

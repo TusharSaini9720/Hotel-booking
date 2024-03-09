@@ -120,7 +120,7 @@ function Cardforhotellist(props) {
               fontWeight: "bold",
             }}
           >
-            <i class="fa-solid fa-indian-rupee-sign">  {props.price}/-</i>
+            {props.price}/-
           </p>
           <p
             style={{
@@ -141,7 +141,7 @@ function Cardforhotellist(props) {
               textAlign: "right",
             }}
           >
-             <i class="fa-solid fa-indian-rupee-sign"> {props.totalPrice
+            {props.totalPrice
               // ? props.totalPrice.includes("nights") ||
               //   props.totalPrice.includes("guests")
               //   ? props.totalPrice
@@ -150,7 +150,7 @@ function Cardforhotellist(props) {
               //       .replace("1 room,", "")
               //   : undefined
               // : undefined}
-            }/-</i>
+            }/-
           </p>
           <p style={{ fontSize: "small", margin: 0, textAlign: "right" }}>
             exclusive of taxes & fees
