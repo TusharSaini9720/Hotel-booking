@@ -2,6 +2,7 @@ const multer=require('multer');
 const sharp=require('sharp');
 const Hotel=require('./../models/hotelModel');
 const factoryhandler = require('./factoryhandler');
+const path=require('path');
 //const APIFeatures=require('./../utils/Apifeature');
 
 const multerStroage=multer.memoryStorage();
@@ -38,11 +39,18 @@ exports.resizeHotelPhoto=async(req,res,next)=>{
     .toFormat('jpeg')
     .jpeg({quality:90})
     .toFile(`dev_data/hotels/${filename}`);
-    req.body.image.push(filename);
+    req.body.image.push(`${req.protocol}://${req.get(
+        "host"
+      )}/api/v1/hotels/images/${filename}`);
 }))
 //console.log("after map ");
     next();
 }
+exports.sendImage = async (req, res, next) => {
+    res.sendFile(
+      path.resolve(`${__dirname}/../dev_data/hotels/${req.params.fileName}`)
+    );
+  };
 // upload.field({name:"image",6},{name:}); it use for adding different images means for different parts
 
 // exports.aliasTopTours = (req, res, next) => {

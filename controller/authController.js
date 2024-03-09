@@ -142,10 +142,11 @@ exports.forgotPassword = async (req, res) => {
   const resetToken = user.createPasswordResetToken();
   await user.save({ validateBeforeSave: false }); //deactivate all validators in schema as email should be unique
   //3.sending token to user's email
-  // const resetURL = `${req.protocol}://${req.get(
-  //   "host"
-  // )}/api/v1/users/resetPassword/${resetToken}`;
-  const resetURL=`http://localhost:3001/resetPassword/${resetToken}`;
+  const resetURL = `${req.protocol}://${req.get(
+    "host"
+  )}/resetPassword/${resetToken}`;
+  //const resetURL=`http://localhost:3001/resetPassword/${resetToken}`;
+
   const message = `Forgot your password? Submit a patch request with your new password with confirmPassword to: 
     ${resetURL}\n If you did't forgot your password, please ignore this email`;
 
@@ -275,7 +276,9 @@ exports.updateData = async (req, res) => {
 
   //2.filter out fields that are not allowed to update
   const filteredBody = filterObj(req.body, "name","email");
- if(req.file)filteredBody.photo=req.file.filename;
+ if(req.file)filteredBody.photo=`${req.protocol}://${req.get(
+  "host"
+)}/api/v1/users/images/${req.file.filename}`;
   //3. update the data
   //we can't just save updates because we need only some validations
   const updatedUser = await User.findByIdAndUpdate(req.user.id, filteredBody, {

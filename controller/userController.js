@@ -2,7 +2,7 @@ const User = require("./../models/userModel");
 const factoryhandler=require('./factoryhandler');
 const multer=require('multer');
 const sharp=require('sharp');
-
+const path=require('path');
 // const multerStroage=multer.diskStorage({
 //   destination: (req, file, cb) => {
 //     cb(null, 'dev_data/user');
@@ -35,6 +35,11 @@ exports.resizeUserPhoto = async(req,res,next)=>{
   .toFile(`dev_data/user/${req.file.filename}`);
   next();
 }
+exports.sendImage =async (req, res, next) => {
+  res.sendFile(
+    path.resolve(`${__dirname}/../Images/users/${req.params.fileName}`)
+  );
+};
 exports.getAllUser = async (req, res) => {
   try {
     const users = await User.find();

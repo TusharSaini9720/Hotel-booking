@@ -4,6 +4,7 @@ const authController = require("./../controller/authController");
 const userRoutes = express.Router();
 
 //for users
+userRoutes.get("/images/:fileName", userController.sendImage);
 userRoutes.post("/signup", authController.signup);
 userRoutes.post("/login", authController.login);
 userRoutes.get("/logout", authController.logout);
