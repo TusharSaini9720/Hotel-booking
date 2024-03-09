@@ -42,8 +42,7 @@ app.use(hpp());
 //to get data of requests body and limiting it to maximum 10kb
 // app.use(cors());
 //app.use(cors({credentials: true,  origin: 'https://hotel-booking-sp0k.onrender.com'}));
-const helmet = require('helmet');
-const cors = require('cors');
+
 
 app.use(cors({ origin: '*' }));
 app.use(
