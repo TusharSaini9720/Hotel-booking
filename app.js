@@ -56,6 +56,15 @@ app.use(cors({ origin: "*" }));
 // app.use(helmet.crossOriginOpenerPolicy());
 // app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 // app.use(helmet.hidePoweredBy());
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net", "https://js.stripe.com"],
+      // Add other directives as needed
+    },
+  })
+);
 
 app.post(
   "/webhooks",
