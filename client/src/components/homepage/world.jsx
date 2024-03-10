@@ -10,7 +10,7 @@ function World() {
       return (
         <Cardforworld
           id={data.id}
-          image_url={data.image_url}
+          image_url={`../../images/world/${data.image_url}`}
           name={data.name}
           hotel_id={data.hotel_id}
           country={data.country}

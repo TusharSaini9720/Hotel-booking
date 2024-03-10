@@ -1,12 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.70c3a208.css",
-    "main.js": "/static/js/main.75f114ce.js",
+    "main.js": "/static/js/main.9d3a2002.js",
     "static/media/carousel_image.jpg": "/static/media/carousel_image.03e6d89808280496a039.jpg",
     "static/media/images.jpeg": "/static/media/images.2c932818f28350588015.jpeg",
     "static/media/j46uNT.jpg": "/static/media/j46uNT.ee0bb9db23deceea6b2d.jpg",
     "static/media/Motion.png": "/static/media/Motion.518593ea951812ad7ace.png",
     "static/media/wp1846066.jpg": "/static/media/wp1846066.131dc26ebbb03bc888e5.jpg",
+    "static/media/TheBeverlyHillsHotelPool-production_digital.webp": "/static/media/TheBeverlyHillsHotelPool-production_digital.f9c70c88e521bb839fed.webp",
     "static/media/lovepik-malaysia-luxury-resort-hotel-picture_500865089.jpg": "/static/media/lovepik-malaysia-luxury-resort-hotel-picture_500865089.4cc365a5c96a5e11b64a.jpg",
     "static/media/hotel-1.jpg": "/static/media/hotel-1.ad6f9a7516f6ea642f2e.jpg",
     "static/media/life-resort-hotel-resort-hotel-wallpaper-preview.jpg": "/static/media/life-resort-hotel-resort-hotel-wallpaper-preview.4ce8a948733656d9b4b8.jpg",
@@ -21,10 +22,10 @@
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
     "main.70c3a208.css.map": "/static/css/main.70c3a208.css.map",
-    "main.75f114ce.js.map": "/static/js/main.75f114ce.js.map"
+    "main.9d3a2002.js.map": "/static/js/main.9d3a2002.js.map"
   },
   "entrypoints": [
     "static/css/main.70c3a208.css",
-    "static/js/main.75f114ce.js"
+    "static/js/main.9d3a2002.js"
   ]
 }
