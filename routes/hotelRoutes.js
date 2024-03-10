@@ -6,6 +6,7 @@ const reviewrouter=require('./reviewRoutes');
 const hotelRoutes = express.Router();
 
 hotelRoutes.get("/images/:fileName", hotelcontroller.sendImage);
+hotelRoutes.get("/images/world/:fileName", hotelcontroller.sendImage1);
 hotelRoutes.use('/:hotelId/reviews',reviewrouter);
 
 hotelRoutes.get("/",hotelcontroller.getallhotel);

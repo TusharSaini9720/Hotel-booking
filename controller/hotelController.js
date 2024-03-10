@@ -51,6 +51,11 @@ exports.sendImage = async (req, res, next) => {
       path.resolve(`${__dirname}/../dev_data/hotels/${req.params.fileName}`)
     );
   };
+  exports.sendImage1 = async (req, res, next) => {
+    res.sendFile(
+      path.resolve(`${__dirname}/../dev_data/world/${req.params.fileName}`)
+    );
+  };
 // upload.field({name:"image",6},{name:}); it use for adding different images means for different parts
 
 // exports.aliasTopTours = (req, res, next) => {

@@ -1,15 +1,3 @@
-import image1 from './images/world/hotel-1.jpg'
-import image2 from './images/world/hotel-389256_640.jpg'
-import image3 from './images/world/images (1).jpeg'
-import image4 from './images/world/images.jpeg'
-import image5 from './images/world/j46uNT.jpg'
-import image6 from './images/world/life-resort-hotel-resort-hotel-wallpaper-preview.jpg'
-import image7 from './images/world/lovepik-malaysia-luxury-resort-hotel-picture_500865089.jpg'
-import image8 from './images/world/luxury-hotel-4480742.webp'
-import image9 from './images/world/TheBeverlyHillsHotelPool-production_digital.webp'
-import image10 from './images/world/night-in-las-vegas-bellagio-luxury-hotel-casino-hd-wallpapers-for-mobile-phones-laptops-and-pc-1920×1080-wallpaper-preview.jpg'
-import image11 from './images/world/piscina-principal-en.jpg'
-import image12 from './images/world/wp1846066.jpg'
 
 var world = [
   {
