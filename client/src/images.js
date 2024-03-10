@@ -1,3 +1,16 @@
+import image1 from './images/world/hotel-1.jpg'
+import image2 from './images/world/hotel-389256_640.jpg'
+import image3 from './images/world/images (1).jpeg'
+import image4 from './images/world/images.jpeg'
+import image5 from './images/world/j46uNT.jpg'
+import image6 from './images/world/life-resort-hotel-resort-hotel-wallpaper-preview.jpg'
+import image7 from './images/world/lovepik-malaysia-luxury-resort-hotel-picture_500865089.jpg'
+import image8 from './images/world/luxury-hotel-4480742.webp'
+import image9 from './images/world/luxury-hotel-4480742.webp'
+import image10 from './images/world/night-in-las-vegas-bellagio-luxury-hotel-casino-hd-wallpapers-for-mobile-phones-laptops-and-pc-1920×1080-wallpaper-preview.jpg'
+import image11 from './images/world/piscina-principal-en.jpg'
+import image12 from './images/world/wp1846066.jpg'
+
 var popular = [
   {
     id: "0",
@@ -36,96 +49,84 @@ var world = [
     name: "The landmark Bangkok",
     country: "Thailand",
     hotel_id: 145450,
-    image_url:
-      "https://exp.cdn-hotels.com/hotels/1000000/30000/20300/20211/c7539a39_z.jpg?impolicy=fcrop&w=500&h=333&q=medium",
+    image_url:{image1}
   },
   {
     id: "2",
     name: "Angsana Velavaru",
     country: "Maldives",
     hotel_id: 197481,
-    image_url:
-      "https://exp.cdn-hotels.com/hotels/1000000/200000/199900/199865/37e9206b_z.jpg?impolicy=fcrop&w=773&h=530&q=high",
+    image_url:{image2}
   },
   {
     id: "3",
     name: "M Social Hotel",
     country: "USA",
     hotel_id: 114036,
-    image_url:
-      "https://exp.cdn-hotels.com/hotels/1000000/20000/16200/16135/7c3ee3ae_z.jpg?impolicy=fcrop&w=773&h=530&q=high",
-  },
+    image_url:{image3}
+    },
   {
     id: "4",
     name: "Hotel Fasano",
     country: "Brazil",
     hotel_id: 246233,
-    image_url:
-      "https://exp.cdn-hotels.com/hotels/28000000/27050000/27041700/27041659/0e859e26_z.jpg?impolicy=fcrop&w=500&h=333&q=medium",
-  },
+    image_url:{image4}
+    },
   {
     id: "5",
     name: "Mousai Puerto Vallorta",
     country: "Mexico",
     hotel_id: 448946,
-    image_url:
-      "https://exp.cdn-hotels.com/hotels/8000000/7280000/7277400/7277386/2b17f542_z.jpg?impolicy=fcrop&w=1000&h=666&q=medium",
+    image_url:{image5}
   },
   {
     id: "6",
     name: "Niwa Tokyo",
     country: "Japan",
     hotel_id: 359540,
-    image_url:
-      "https://exp.cdn-hotels.com/hotels/3000000/2920000/2919900/2919886/1dc710ab_z.jpg?impolicy=fcrop&w=1000&h=666&q=medium",
+    image_url:{image6}
   },
   {
     id: "7",
     name: "Novotel Beijing Peace",
     country: "China",
     hotel_id: 178635,
-    image_url:
-      "https://exp.cdn-hotels.com/hotels/1000000/490000/483300/483232/9b4a2274_z.jpg?impolicy=fcrop&w=1000&h=666&q=medium",
+    image_url:{image7}
   },
   {
     id: "8",
     name: "The Savoy",
     country: "UK",
     hotel_id: 172847,
-    image_url:
-      "https://exp.cdn-hotels.com/hotels/1000000/30000/27200/27158/71a5b073_z.jpg?impolicy=fcrop&w=1000&h=666&q=medium",
+    image_url:{image8}
   },
   {
     id: "9",
     name: "Mountains Hotel",
     country: "Austria",
     hotel_id: 290443,
-    image_url:
-      "https://exp.cdn-hotels.com/hotels/2000000/1220000/1211100/1211054/c747ce90_z.jpg?impolicy=fcrop&w=1000&h=666&q=medium",
+    image_url:{image9}
   },
   {
     id: "10",
     name: "Premeir Inn",
     country: "UAE",
     hotel_id: 727489856,
-    image_url:
-      "https://exp.cdn-hotels.com/hotels/23000000/22710000/22702900/22702808/a24a8778_z.jpg?impolicy=fcrop&w=1000&h=666&q=medium",
+    image_url:{image10}
   },
   {
     id: "11",
     name: "Marriott Marquis",
     country: "USA",
     hotel_id: 697186,
-    image_url:
-      "https://exp.cdn-hotels.com/hotels/1000000/20000/15900/15838/2a3c5612_z.jpg?impolicy=fcrop&w=1000&h=666&q=medium",
+    image_url:{image11}
   },
   {
     id: "12",
     name: "Four Seasons Hotel",
     country: "Turkey",
     hotel_id: 346067,
-    image_url:
-      "https://exp.cdn-hotels.com/hotels/2000000/1860000/1856100/1856092/5e427a69_z.jpg?impolicy=fcrop&w=1000&h=666&q=medium",
+    image_url:{image12}
   },
 ];
 export default popular;
