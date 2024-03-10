@@ -1,19 +1,30 @@
 {
   "files": {
     "main.css": "/static/css/main.70c3a208.css",
-    "main.js": "/static/js/main.718104cb.js",
+    "main.js": "/static/js/main.75f114ce.js",
     "static/media/carousel_image.jpg": "/static/media/carousel_image.03e6d89808280496a039.jpg",
+    "static/media/images.jpeg": "/static/media/images.2c932818f28350588015.jpeg",
+    "static/media/j46uNT.jpg": "/static/media/j46uNT.ee0bb9db23deceea6b2d.jpg",
     "static/media/Motion.png": "/static/media/Motion.518593ea951812ad7ace.png",
+    "static/media/wp1846066.jpg": "/static/media/wp1846066.131dc26ebbb03bc888e5.jpg",
+    "static/media/lovepik-malaysia-luxury-resort-hotel-picture_500865089.jpg": "/static/media/lovepik-malaysia-luxury-resort-hotel-picture_500865089.4cc365a5c96a5e11b64a.jpg",
+    "static/media/hotel-1.jpg": "/static/media/hotel-1.ad6f9a7516f6ea642f2e.jpg",
+    "static/media/life-resort-hotel-resort-hotel-wallpaper-preview.jpg": "/static/media/life-resort-hotel-resort-hotel-wallpaper-preview.4ce8a948733656d9b4b8.jpg",
+    "static/media/hotel-389256_640.jpg": "/static/media/hotel-389256_640.8132f65d97d8a4161441.jpg",
+    "static/media/night-in-las-vegas-bellagio-luxury-hotel-casino-hd-wallpapers-for-mobile-phones-laptops-and-pc-1920×1080-wallpaper-preview.jpg": "/static/media/night-in-las-vegas-bellagio-luxury-hotel-casino-hd-wallpapers-for-mobile-phones-laptops-and-pc-1920×1080-wallpaper-preview.cb67fdeea6053b8af747.jpg",
+    "static/media/piscina-principal-en.jpg": "/static/media/piscina-principal-en.b7a56c55acc469d9d460.jpg",
+    "static/media/luxury-hotel-4480742.webp": "/static/media/luxury-hotel-4480742.2681d7dfcb4d50a9813a.webp",
+    "static/media/images (1).jpeg": "/static/media/images (1).dbc9bc1d61a6df55dc8b.jpeg",
     "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
     "main.70c3a208.css.map": "/static/css/main.70c3a208.css.map",
-    "main.718104cb.js.map": "/static/js/main.718104cb.js.map"
+    "main.75f114ce.js.map": "/static/js/main.75f114ce.js.map"
   },
   "entrypoints": [
     "static/css/main.70c3a208.css",
-    "static/js/main.718104cb.js"
+    "static/js/main.75f114ce.js"
   ]
 }
