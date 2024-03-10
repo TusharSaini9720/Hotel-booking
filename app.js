@@ -43,19 +43,19 @@ app.use(hpp());
 // app.use(cors());
 //app.use(cors({credentials: true,  origin: 'https://hotel-booking-sp0k.onrender.com'}));
 app.use(cors({ origin: "*" }));
-app.use(
-  helmet.contentSecurityPolicy({
-    useDefaults: true,
-    directives: {
-      scriptSrc: ["'self'", "https://js.stripe.com"],
-      frameSrc: ["self", "https://js.stripe.com", "https://hooks.stripe.com"],
-    },
-  })
-);
+// app.use(
+//   helmet.contentSecurityPolicy({
+//     useDefaults: true,
+//     directives: {
+//       scriptSrc: ["'self'", "https://js.stripe.com"],
+//       frameSrc: ["self", "https://js.stripe.com", "https://hooks.stripe.com"],
+//     },
+//   })
+// );
 
-app.use(helmet.crossOriginOpenerPolicy());
-app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
-app.use(helmet.hidePoweredBy());
+// app.use(helmet.crossOriginOpenerPolicy());
+// app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
+// app.use(helmet.hidePoweredBy());
 
 app.post(
   "/webhooks",
