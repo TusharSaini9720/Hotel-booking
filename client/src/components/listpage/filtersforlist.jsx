@@ -5,6 +5,9 @@ import { DateRangePicker } from "react-dates";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import moment from "moment";
+import { FaSearch } from "react-icons/fa";
+import { FaRegCalendarAlt } from "react-icons/fa";
+import { IoIosPeople } from "react-icons/io";
 
 function Filtersforlist(props) {
   //states
@@ -38,8 +41,8 @@ function Filtersforlist(props) {
     <div className="filtersforlist">
       <h2 style={{ textAlign: "center", color: "white" }}>Where and When?</h2>
       <div className="formforlist">
-        <div className="name">
-          <i class="fas fa-search searchicon"></i>
+        <div className="name" style={{alignItems:"center"}}>
+        <FaSearch style={{ color: "blue", fontSize: "large" }}/>
           <input
             type="text"
             onFocus={handlefocus}
@@ -48,8 +51,8 @@ function Filtersforlist(props) {
             onChange={(e) => setcity(e.target.value)}
           ></input>
         </div>
-        <div className="name2">
-          <i class="far fa-calendar-alt searchicon"></i>
+        <div className="name2" style={{alignItems:"center"}}>
+        <FaRegCalendarAlt style={{ color: "blue", fontSize: "large" }}/>
 
           <DateRangePicker
             startDatePlaceholderText={moment(props.startdate).format(
@@ -69,8 +72,8 @@ function Filtersforlist(props) {
             minimumNights={1}
           />
         </div>
-        <div className="name">
-          <i class="fas fa-users searchicon" style={{ marginRight: "5px" }}></i>
+        <div className="name" style={{alignItems:"center"}}>
+        <FaRegCalendarAlt style={{ color: "blue", fontSize: "large" }}/>
           <input
             type="text"
             onFocus={handlefocus}

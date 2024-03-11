@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import moment from "moment";
+import { FaStar } from "react-icons/fa";
+import { FaRegStar } from "react-icons/fa";
 
 function Cardforpast(props) {
  // console.log("history",props.history);
@@ -68,14 +70,14 @@ function Cardforpast(props) {
           </p>
           <div style={{ display: "flex", alignItems: "center" }}>
   
-  <div className="star-rating" style={{ marginLeft: "5px" }}>
+  <div className="star-rating" style={{ marginLeft: "5px", alignItems:"center" }}>
     {[...Array(5)].map((star, index) => {
       index += 1;
       return (
         index <= props.history.starRating ? (
-          <span className="fa-solid fa-star" style={{ color: "#FFD43B", fontSize: "x-large" }}></span>
+          <FaStar style={{ color: "#FFD43B", fontSize: "x-large" }}/>
         ) : (
-          <span className="fa-regular fa-star" style={{ color: "#FFD43B", fontSize: "x-large" }}></span>
+          <FaRegStar style={{ color: "#FFD43B", fontSize: "x-large" }}/>
         )
       );
     })}

@@ -1,5 +1,6 @@
 import React from "react";
-
+import { FaStar } from "react-icons/fa";
+import { FaRegStar } from "react-icons/fa";
 function Cardforreviews(props) {
    
   return (
@@ -15,14 +16,14 @@ function Cardforreviews(props) {
     {props.review.user.name}
   </p>
 
-  <div className="star-rating">
+  <div className="star-rating" style={{alignItems:"center"}}>
     {[...Array(5)].map((star, index) => {
       index += 1;
       return (
         index <= props.review.rating ? (
-          <span className="fa-solid fa-star" style={{ color: "#FFD43B", fontSize: "large" }}></span>
+          <FaStar style={{ color: "#FFD43B", fontSize: "x-large" }}/>
         ) : (
-          <span className="fa-regular fa-star" style={{ color: "#FFD43B", fontSize: "large" }}></span>
+          <FaRegStar style={{ color: "#FFD43B", fontSize: "x-large" }}/>
         )
       );
     })}

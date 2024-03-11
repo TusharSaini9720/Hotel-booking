@@ -5,6 +5,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import Cardforreviews from "../Cards/cardforreviews";
+import { FaDollarSign } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
+import { FaRegStar } from "react-icons/fa";
 
 function Rating(props) {
   //console.log("in rating ",props);
@@ -41,14 +44,14 @@ function Rating(props) {
               }}
             >
               {/* {props.reviews.overview.overall} */}
-              <div className="star-rating">
+              <div className="star-rating" style={{alignItems:"center"}}>
     {[...Array(5)].map((star, index) => {
       index += 1;
       return (
         index <= props.hotel.ratingAverage ? (
-          <span className="fa-solid fa-star" style={{ color: "#FFD43B", fontSize: "xx-large" }}></span>
+          <FaStar style={{ color: "#FFD43B", fontSize: "x-large" }}/>
         ) : (
-          <span className="fa-regular fa-star" style={{ color: "#FFD43B", fontSize: "xx-large" }}></span>
+          <FaRegStar style={{ color: "#FFD43B", fontSize: "x-large" }}/>
         )
       );
     })}
@@ -208,14 +211,14 @@ function Rating(props) {
           </div>
           <div>
             <p style={{ margin: 0 }}>Hotel Service</p>
-            <div className="star-rating">
+            <div className="star-rating" style={{alignItems:"center"}}>
     {[...Array(5)].map((star, index) => {
       index += 1;
       return (
         index <= props.hotel.HotelServiceRating ? (
-          <span className="fa-solid fa-star" style={{ color: "#FFD43B", fontSize: "x-large" }}></span>
+          <FaStar style={{ color: "#FFD43B", fontSize: "x-large" }}/>
         ) : (
-          <span className="fa-regular fa-star" style={{ color: "#FFD43B", fontSize: "x-large" }}></span>
+          <FaRegStar style={{ color: "#FFD43B", fontSize: "x-large" }}/>
         )
       );
     })}
@@ -226,14 +229,14 @@ function Rating(props) {
           </div>
           <div>
             <p style={{ margin: 0 }}>Room Comfort</p>
-            <div className="star-rating">
+            <div className="star-rating" style={{alignItems:"center"}}>
     {[...Array(5)].map((star, index) => {
       index += 1;
       return (
         index <= props.hotel.RoomComfortRating ? (
-          <span className="fa-solid fa-star" style={{ color: "#FFD43B", fontSize: "x-large" }}></span>
+          <FaStar style={{ color: "#FFD43B", fontSize: "x-large" }}/>
         ) : (
-          <span className="fa-regular fa-star" style={{ color: "#FFD43B", fontSize: "x-large" }}></span>
+          <FaRegStar style={{ color: "#FFD43B", fontSize: "x-large" }}/>
         )
       );
     })}
@@ -244,14 +247,14 @@ function Rating(props) {
           </div>
           <div>
             <p style={{ margin: 0 }}>Hotel Condition</p>
-            <div className="star-rating">
+            <div className="star-rating" style={{alignItems:"center"}}>
     {[...Array(5)].map((star, index) => {
       index += 1;
       return (
         index <= props.hotel.HotelConditionRating ? (
-          <span className="fa-solid fa-star" style={{ color: "#FFD43B", fontSize: "x-large" }}></span>
+          <FaStar style={{ color: "#FFD43B", fontSize: "x-large" }}/>
         ) : (
-          <span className="fa-regular fa-star" style={{ color: "#FFD43B", fontSize: "x-large" }}></span>
+          <FaRegStar style={{ color: "#FFD43B", fontSize: "x-large" }}/>
         )
       );
     })}
@@ -262,14 +265,14 @@ function Rating(props) {
           </div>
           <div>
             <p style={{ margin: 0 }}>Cleanliness</p>
-            <div className="star-rating">
+            <div className="star-rating" style={{alignItems:"center"}}>
     {[...Array(5)].map((star, index) => {
       index += 1;
       return (
         index <= props.hotel.CleanlinessRating ? (
-          <span className="fa-solid fa-star" style={{ color: "#FFD43B", fontSize: "x-large" }}></span>
+          <FaStar style={{ color: "#FFD43B", fontSize: "x-large" }}/>
         ) : (
-          <span className="fa-regular fa-star" style={{ color: "#FFD43B", fontSize: "x-large" }}></span>
+          <FaRegStar style={{ color: "#FFD43B", fontSize: "x-large" }}/>
         )
       );
     })}

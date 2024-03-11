@@ -1,6 +1,9 @@
 import React from "react";
 import parse from "html-react-parser";
 import Bookingform from './bookingform'
+import { FaDollarSign } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
+import { FaRegStar } from "react-icons/fa";
 function Header(props) {
   //console.log("props", props);
   return (
@@ -18,14 +21,14 @@ function Header(props) {
         </p>
         <div style={{ display: "flex", alignItems: "center" }}>
   
-  <div className="star-rating" style={{ marginLeft: "0px" }}>
+  <div className="star-rating" style={{ marginLeft: "0px", alignItems:"center"}}>
     {[...Array(5)].map((star, index) => {
       index += 1;
       return (
         index <= props.starrating ? (
-          <span className="fa-solid fa-star" style={{ color: "#FFD43B", fontSize: "xx-large" }}></span>
+          <FaStar style={{ color: "#FFD43B", fontSize: "x-large" }}/>
         ) : (
-          <span className="fa-regular fa-star" style={{ color: "#FFD43B", fontSize: "xx-large" }}></span>
+          <FaRegStar style={{ color: "#FFD43B", fontSize: "x-large" }}/>
         )
       );
     })}
@@ -86,9 +89,10 @@ function Header(props) {
             textAlign: "right",
             fontWeight: "bold",
             color: "crimson",
+            alignItems:"center"
           }}
         >
-         <i class="fa-solid fa-indian-rupee-sign">  {props.price}/-</i>
+         <FaDollarSign/>{props.price}/-
         </p>
         <p
           style={{
@@ -107,6 +111,7 @@ function Header(props) {
             color: "black",
             fontWeight: "bold",
             textAlign: "right",
+            alignItems:"center",
           }}
         >
           {/* {props.totalPrice
@@ -119,7 +124,7 @@ function Header(props) {
             //   : undefined
             // : undefined}
           } */}
-          <i class="fa-solid fa-indian-rupee-sign">   {props.totalPrice}/-</i>
+           <FaDollarSign/>{props.totalPrice}/-
         </p>
         <p
           style={{

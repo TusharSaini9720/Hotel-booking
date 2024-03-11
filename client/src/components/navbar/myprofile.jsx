@@ -42,7 +42,10 @@ function MyProfile(props) {
           handleLeave(e);
         }}
       >
-        <span style={{ padding: "10px 5px" }}>
+        <span style={{ padding: "10px 5px",
+          cursor: "pointer",
+          boxShadow: click ? "0px 0px 10px rgba(0, 0, 0, 0.5)" : "none",
+          transition: "box-shadow 0.3s ease-in-out"}}>
           My Profile{"  "}
           {click ? (
             <i class="fas fa-caret-up"></i>

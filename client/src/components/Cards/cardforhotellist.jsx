@@ -49,7 +49,7 @@ function Cardforhotellist(props) {
           <br/>
           <div style={{ display: "flex", alignItems: "center" }}>
   
-  <div className="star-rating" style={{ marginLeft: "5px" }}>
+  <div className="star-rating" style={{ marginLeft: "5px",alignItems: "center" }}>
     {[...Array(5)].map((star, index) => {
       index += 1;
       return (
@@ -126,7 +126,7 @@ function Cardforhotellist(props) {
               fontWeight: "bold",
             }}
           >
-            <FaDollarSign />{props.price}/-
+            <FaDollarSign/>{props.price}/-
           </p>
           <p
             style={{
