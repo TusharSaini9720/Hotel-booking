@@ -4,6 +4,7 @@ import "react-bootstrap";
 import { DateRangePicker } from "react-dates";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
+import { FaSearch } from "react-icons/fa";
 import moment from "moment";
 
 function Filters() {
@@ -55,8 +56,7 @@ function Filters() {
             ></input>
           </div>
           <div className="name2">
-            <i class="far fa-calendar-alt searchicon"></i>
-
+            <FaSearch style={{ color: "blue", fontSize: "xx-large" }}/>
             <DateRangePicker
               startDatePlaceholderText="Check-in"
               endDatePlaceholderText="Check-out"
