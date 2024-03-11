@@ -1,6 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import StarRatingComponent from 'react-star-rating-component';
+import { FaDollarSign } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
+import { FaRegStar } from "react-icons/fa";
+
+
+
 
 function Cardforhotellist(props) {
    
@@ -48,9 +54,9 @@ function Cardforhotellist(props) {
       index += 1;
       return (
         index <= props.starRating ? (
-          <span className="fa-solid fa-star" style={{ color: "#FFD43B", fontSize: "x-large" }}></span>
+          <FaStar style={{ color: "#FFD43B", fontSize: "x-large" }}/>
         ) : (
-          <span className="fa-regular fa-star" style={{ color: "#FFD43B", fontSize: "x-large" }}></span>
+          <FaRegStar style={{ color: "#FFD43B", fontSize: "x-large" }}/>
         )
       );
     })}
@@ -120,7 +126,7 @@ function Cardforhotellist(props) {
               fontWeight: "bold",
             }}
           >
-            {props.price}/-
+            <FaDollarSign />{props.price}/-
           </p>
           <p
             style={{
@@ -141,7 +147,7 @@ function Cardforhotellist(props) {
               textAlign: "right",
             }}
           >
-            {props.totalPrice
+            <FaDollarSign />{props.totalPrice
               // ? props.totalPrice.includes("nights") ||
               //   props.totalPrice.includes("guests")
               //   ? props.totalPrice

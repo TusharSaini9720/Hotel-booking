@@ -1,5 +1,8 @@
 import React from "react";
 import axios from "axios";
+import { FaRegAddressCard } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
+import { FaPhoneAlt } from "react-icons/fa";
 
 function Contact() {
   const [error, seterror] = React.useState("");
@@ -46,14 +49,14 @@ function Contact() {
       </p>
       <div className="personalData">
         <p>
-          <i class="fas fa-home"></i> &nbsp;&nbsp;Kachchi Garhi, Shamli,
+        <FaRegAddressCard style={{ color: "white", fontSize: "large" }}/>&nbsp;&nbsp;Kachchi Garhi,Shamli,
           UttarPradesh, India
         </p>
         <p style={{ fontStyle: "italic" }}>
-          <i class="fas fa-envelope"></i> &nbsp;&nbsp;9058139810ig@gmail.com
+        <MdEmail style={{ color: "white", fontSize: "large" }}/>&nbsp;&nbsp;itsaini9720@gmail.com
         </p>
         <p>
-          <i class="fas fa-phone"></i> &nbsp;&nbsp;9058139810
+        <FaPhoneAlt style={{ color: "white", fontSize: "large" }}/>&nbsp;&nbsp;9720556084
         </p>
       </div>
       <div className="contactform">

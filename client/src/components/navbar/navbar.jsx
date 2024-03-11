@@ -3,6 +3,9 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import MyProfile from "./myprofile";
 import axios from "axios";
+import { FaSignInAlt } from "react-icons/fa";
+import { FaSignOutAlt } from "react-icons/fa";
+
 
 function NNavbar(props) {
   const history = useHistory();
@@ -52,7 +55,7 @@ function NNavbar(props) {
                     }}
                   >
                     {" "}
-                    <i class="fas fa-sign-in-alt"></i> Sign-In
+                    <FaSignInAlt style={{ color: "blue", fontSize: "large" }}/> Sign-In
                   </Link>
                 </Nav.Link>
               </Nav>
@@ -77,7 +80,7 @@ function NNavbar(props) {
                     }}
                     onClick={() => signout()}
                   >
-                    <i class="fas fa-power-off"></i> Sign-out
+                    <FaSignOutAlt style={{ color: "blue", fontSize: "large" }}/> Sign-out
                   </buttton>
                 </Nav.Link>
               </Nav>
