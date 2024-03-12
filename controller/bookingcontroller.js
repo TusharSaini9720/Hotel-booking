@@ -33,13 +33,6 @@ res.status(200).json({
 })
 }
 
-exports.createBookingCheckout1=async(req,res,next)=>{
-    const {price,user,hotel}=req.query;
-    if(!hotel&&!user&&!price)return next();
-    await Booking.create({hotel,user,price});
-    res.redirect(req.originalUrl.split('?')[0]);
-}
-
 const createBookingCheckout = async (session) => {
     const hotel = session.client_reference_id;
     const user = (await User.findOne({ email: session.customer_email }))

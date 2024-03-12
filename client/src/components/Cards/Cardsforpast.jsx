@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 import { FaStar } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
+import { TiDelete } from "react-icons/ti";
 
 function Cardforpast(props) {
  // console.log("history",props.history);
@@ -148,7 +149,7 @@ function Cardforpast(props) {
           }}
           onClick={(e) => deleteCard(e)}
         >
-          <i class="fas fa-times-circle"></i>
+          <TiDelete />
         </p>
       </div>
     </Link>
