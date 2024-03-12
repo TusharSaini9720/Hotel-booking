@@ -62,7 +62,6 @@ app.post(
   express.raw({ type: "application/json" }),
   bookingcontroller.webhookCheckout
 );
-// app.post('/',bookingcontroller.createBookingCheckout1);
 //to read cookie from request
 app.use(cookieParser());
 
