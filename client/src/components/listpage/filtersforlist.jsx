@@ -73,7 +73,7 @@ function Filtersforlist(props) {
           />
         </div>
         <div className="name" style={{alignItems:"center"}}>
-        <FaRegCalendarAlt style={{ color: "blue", fontSize: "large" }}/>
+        <IoIosPeople style={{ color: "blue", fontSize: "x-large" }}/>
           <input
             type="text"
             onFocus={handlefocus}
