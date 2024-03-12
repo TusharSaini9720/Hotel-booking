@@ -53,9 +53,10 @@ const createBookingCheckout = async (session) => {
         process.env.STRIPE_WEBHOOK_SECRET
       );
     } catch (err) {
+      console.log("err",err);
       return res.status(400).send(`Webhook Error: ${err.message}`);
     }
-  
+   console.log("event",event.type);
     if (event.type === "checkout.session.completed")
       createBookingCheckout(event.data.object);
     console.log("it is working");
