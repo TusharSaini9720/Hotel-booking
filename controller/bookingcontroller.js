@@ -48,6 +48,7 @@ const createBookingCheckout = async (session) => {
     let event;
     const body = JSON.stringify(req.body);
     console.log("req.body",req.body);
+    console.log("process.env.STRIPE_WEBHOOK_SECRET",process.env.STRIPE_WEBHOOK_SECRET);
     try {
       event = stripe.webhooks.constructEvent(
         body,
