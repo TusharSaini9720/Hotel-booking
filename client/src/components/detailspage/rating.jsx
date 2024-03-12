@@ -49,9 +49,9 @@ function Rating(props) {
       index += 1;
       return (
         index <= props.hotel.ratingAverage ? (
-          <FaStar style={{ color: "#FFD43B", fontSize: "x-large" }}/>
+          <FaStar style={{ color: "#FFD43B", fontSize: "xx-large" }}/>
         ) : (
-          <FaRegStar style={{ color: "#FFD43B", fontSize: "x-large" }}/>
+          <FaRegStar style={{ color: "#FFD43B", fontSize: "xx-large" }}/>
         )
       );
     })}
@@ -79,7 +79,7 @@ function Rating(props) {
             }}
           >
             {/* {props.reviews.overview.totalCount} reviews */}
-           Reviews {props.hotel.ratingsQuantity}
+            {props.hotel.ratingsQuantity} Reviews 
           </p>
         </div>
 

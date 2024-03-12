@@ -126,7 +126,7 @@ function Cardforhotellist(props) {
               fontWeight: "bold",
             }}
           >
-            <FaDollarSign/>{props.price}/-
+            <FaDollarSign style={{marginRight:"2px"}}/>{props.price}/-
           </p>
           <p
             style={{
@@ -147,7 +147,7 @@ function Cardforhotellist(props) {
               textAlign: "right",
             }}
           >
-            <FaDollarSign />{props.totalPrice
+            <FaDollarSign style={{marginRight:"2px"}}/>{props.totalPrice
               // ? props.totalPrice.includes("nights") ||
               //   props.totalPrice.includes("guests")
               //   ? props.totalPrice

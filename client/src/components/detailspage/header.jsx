@@ -92,7 +92,7 @@ function Header(props) {
             alignItems:"center"
           }}
         >
-         <FaDollarSign/>{props.price}/-
+         <FaDollarSign style={{marginRight:"2px"}}/>{props.price}/-
         </p>
         <p
           style={{
@@ -124,7 +124,7 @@ function Header(props) {
             //   : undefined
             // : undefined}
           } */}
-           <FaDollarSign/>{props.totalPrice}/-
+           <FaDollarSign style={{marginRight:"2px"}}/>{props.totalPrice}/-
         </p>
         <p
           style={{
