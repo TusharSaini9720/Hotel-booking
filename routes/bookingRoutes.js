@@ -3,7 +3,7 @@ const bookingcontroller=require('./../controller/bookingcontroller');
 const authController = require('./../controller/authController');
 const bookingRoutes=express.Router();
 
-bookingRoutes.get('/checkout-session/:hotelid',authController.protect,bookingcontroller.getcheckoutSession);
+bookingRoutes.post('/checkout-session/:hotelid',authController.protect,bookingcontroller.getcheckoutSession);
 
 
 module.exports=bookingRoutes;
