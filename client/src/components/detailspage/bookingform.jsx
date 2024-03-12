@@ -25,7 +25,7 @@ const Bookingform = (props) => {
         try {
           setstate("Loading...");
           const Session = await axios({
-            method: "GET",
+            method: "POST",
             url: url,
             headers: {
                 "Authorization":`Bearer ${props.token}`,
