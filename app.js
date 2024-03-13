@@ -21,7 +21,7 @@ const limiter = rateLimit({
   windowMs: 60 * 60 * 1000,
   message: "Too many requests from this IP.Please try after one hour",
 });
-app.use(express.json());
+app.use(compression());
 const path = require("path");
 __dirname = path.resolve();
 const bookingRoutes = require("./routes/bookingRoutes");
@@ -64,9 +64,8 @@ app.post(
 );
 //to read cookie from request
 app.use(cookieParser());
-
 app.use(express.urlencoded({ extended: true, limit: "10kb" }));
-app.use(compression());
+app.use(express.json({ limit: "10kb" }));
 
 //Routes middleware
 app.use('/api/v1/hotels',hotelrouter);
