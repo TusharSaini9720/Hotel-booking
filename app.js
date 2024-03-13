@@ -27,17 +27,13 @@ __dirname = path.resolve();
 const bookingRoutes = require("./routes/bookingRoutes");
 
 //limiting requests from same api
-app.use("/api/v1/users", limiter); //also if app get crashed it will automatically set limit to max
+app.use("/api/v1", limiter); //also if app get crashed it will automatically set limit to max
 
 //setting security http headers
-app.use(helmet());
-
 //Data sanitization against NOSQL query injection
 app.use(mongoSanitize());
-
 //Data sanitization against xss attacks
 app.use(xss());
-
 app.use(hpp());
 //to get data of requests body and limiting it to maximum 10kb
 // app.use(cors());
