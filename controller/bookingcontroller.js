@@ -14,7 +14,7 @@ exports.getcheckoutSession=async(req,res)=>{
     client_reference_id:req.params.hotelid,
     line_items: [{
         price_data: {
-            currency: 'usd',
+            currency: 'INR',
             product_data: {
                 name: hotel.name,
                 description: hotel.About_hotel,
@@ -53,7 +53,6 @@ const createBookingCheckout = async (session) => {
     } catch (err) {
       return res.status(400).send(`Webhook Error: ${err.message}`);
     }
-   console.log("event",event.type);
     if (event.type === "checkout.session.completed")
       createBookingCheckout(event.data.object);
     res.status(200).json({ received: true });
