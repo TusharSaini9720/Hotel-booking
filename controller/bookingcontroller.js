@@ -32,12 +32,11 @@ res.status(200).json({
     session
 })
 }
-
 const createBookingCheckout = async (session) => {
     const hotel = session.client_reference_id;
     const user = (await User.findOne({ email: session.customer_email }))
       .id;
-    const price = session.line_items[0].price_data.unit_amount / 100;
+    const price = session.amount_total / 100;
     // const startingDate = session.metadata.startingDate;
     // const services = session.metadata.services.split(",");
     await Booking.create({ hotel, user, price});
