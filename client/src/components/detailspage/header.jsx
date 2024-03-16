@@ -1,6 +1,5 @@
 import React from "react";
 import parse from "html-react-parser";
-import Bookingform from './bookingform'
 import { FaDollarSign } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
@@ -152,7 +151,6 @@ function Header(props) {
         >
           Room Details
         </button>  */}
-        <Bookingform hotelid={props.id} signedIn={props.signedIn} token={props.token}/>
       </div>
     </div>
   );

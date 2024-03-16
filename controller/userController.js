@@ -1,4 +1,6 @@
 const User = require("./../models/userModel");
+const Review=require('../models/reviewModel');
+const Booking=require('../models/bookingModel');
 const factoryhandler=require('./factoryhandler');
 const multer=require('multer');
 const sharp=require('sharp');
@@ -110,4 +112,50 @@ exports.getMe = (req, res, next) => {
   req.params.id = req.user.id;
 
   next();
+};
+
+exports.getMyBookings = async (req, res, next) => {
+  try{
+    const currentDate = new Date();
+  const currentBookings = await Booking.find({
+    customer: req.user.id,
+    startingDate: { $lte: currentDate },
+    endingDate: { $gte: currentDate },
+  }).populate({ path: "hotel", select: "name photo _id" });
+  
+  const pastBookings = await Booking.find({
+    user: req.user.id,
+    endingDate: { $lt: currentDate },
+  }).populate({ path: "hotel", select: "name photo _id" });
+
+  res.status(200).json({
+    status: "success",
+    data: {
+      CurrentBookings: currentBookings,
+      PastBookings: pastBookings,
+    },
+  });}
+  catch(err){
+    console.log("err",err);
+    res.status(400).json({
+      status: "fail",
+     message:" "+err,
+  })
+}};
+exports.getMyReviews = async (req, res, next) => {
+  try{const reviews = await Review.find({
+    user: req.user.id,
+  }).populate({ path: "hotel", select: "name photo _id" });
+  res.status(200).json({
+    status: "success",
+    data: {
+      reviews: reviews,
+    },
+  });}
+  catch(err){
+    console.log("err",err);
+    res.status(400).json({
+      status: "fail",
+     message:" "+err,
+  })}
 };

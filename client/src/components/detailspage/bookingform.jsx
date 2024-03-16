@@ -12,28 +12,30 @@ const Bookingform = (props) => {
       );
     
       const url = `/api/v1/booking/checkout-session/${props.hotelid}`;
-    
+      const startdate=props.startdate;
+      const enddate=props.enddate;
+      const noofdays=props.noofdays;
+      console.log("startdate",startdate);
       const handleClick = async () => {
         if (!props.signedIn) {
           alert("Login as customer to book a hotel. ");
           return;
         }
-        // if (startingDate === undefined || servicesNumber === 0) {
-        //   alert("Please choose starting work date and services needed! ");
-        //   return;
-        // }
+        if (startdate === undefined || enddate === undefined) {
+          alert("Please choose starting and ending date needed! ");
+          return;
+        }
         try {
           setstate("Loading...");
           const Session = await axios({
             method: "POST",
             url: url,
             headers: {
-                "Authorization":`Bearer ${props.token}`,
+                "Authorization":`Bearer ${props.token}`
                 // "Content-Type": "application/json",
-              }
-            // data: { startingDate, services },
+              },
+             data: {startdate,enddate,noofdays },
           });
-       console.log("before stripe", Session);
           const stripe = await stripePromise;
           stripe.redirectToCheckout({ sessionId: Session.data.session.id });
           setstate("Book Now");
@@ -46,8 +48,9 @@ const Bookingform = (props) => {
 
 
   return (
-    <div>
+    <div >
        <button
+       className="search"
           style={{
             backgroundColor: "dodgerblue",
             color: "white",

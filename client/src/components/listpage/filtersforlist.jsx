@@ -17,10 +17,11 @@ function Filtersforlist(props) {
     startdate: props.startdate,
     enddate: props.enddate,
   });
+  // console.log("dateRange.end",dateRange.enddate);
   const [focus, setFocus] = React.useState(null);
 
   var { startDate, endDate } = dateRange;
-
+// console.log("endDate",endDate);
   //functions
   function handlefocus(event) {
     event.target.parentElement.style.borderColor = "dodgerblue";

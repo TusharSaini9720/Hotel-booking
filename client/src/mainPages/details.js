@@ -13,7 +13,6 @@ import axios from "axios";
 import parse from "html-react-parser";
 function Details(props) {
   //console.log("token in detail",props.token);
-  //console.log("detail",)
   let history = [];
   const location = useLocation();
   //console.log("location",location.state);
@@ -35,7 +34,7 @@ function Details(props) {
   const [adults_number, setadults_number] = React.useState(guestsnumber);
   const [checkin, setcheckin] = React.useState(startdate);
   const [checkout, setcheckout] = React.useState(enddate);
-
+  const[noofdays,setnoofdays] = React.useState(1);
   const [details, setdetails] = React.useState({});
   const [photos, setphotos] = React.useState([]);
   const [reviews, setreviews] = React.useState({});
@@ -159,14 +158,24 @@ function Details(props) {
           id={hotel_id}
           signedIn={props.signedIn}
           token={props.token}
+          noofdays={noofdays}
+          startdate={startdate}
+          enddate={enddate}
         />
         <hr />
         <Starter
+        totalPrice={details.totalPrice}
+        price={details.price}
+         id={hotel_id}
+         signedIn={props.signedIn}
           photos={details.image}
           city={name}
+          token={props.token}
           startdate={startdate}
           enddate={enddate}
           guestsnumber={guestsnumber}
+          setnoofdays={setnoofdays}
+          noofdays={noofdays}
         />
         <hr />
         <Rating hotel={details} />

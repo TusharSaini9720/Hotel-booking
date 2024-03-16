@@ -7,6 +7,7 @@ const path=require('path');
 
 const multerStroage=multer.memoryStorage();
 const multerFilter=(req,file,cb)=>{
+    console.log("req",req.body);
   if(file.mimetype.split('/')[0]!=='image'){
     cb(new Error('Only images are allowed'),false);
   }
@@ -16,23 +17,37 @@ const upload=multer({
   storage:multerStroage,
   fileFilter:multerFilter
 })
-exports.uploadHotelPhoto = upload.array("image",2);
+const roomsindex=(body)=>{
+    let indexValue=null;
+    for (const key in body) {
+        if (key.startsWith('Rooms[') && key.endsWith('].roomsimage')) {
+          // Extract the index value from the key
+          const startIndex = key.indexOf('[') + 1;
+          const endIndex = key.indexOf(']');
+          indexValue = key.slice(startIndex, endIndex);
+          break; // Exit the loop once a matching key is found
+        }
+      }
+      return indexValue;
+}
+//exports.uploadHotelPhoto = upload.array("image",3);
+exports.uploadHotelPhoto =  upload.fields([{ name: 'image', maxCount: 3 }, { name: 'Rooms[0].roomsimage', maxCount: 4 }]);
+
+    // Define the formDataKey dynamically using indexValue
+    // console.log("req",req.files);
+    // const indexValue = roomsindex(req.body);
+    // let formDataKey=null;
+    // if (indexValue !== null) {
+    //  formDataKey = `Rooms[${indexValue}].roomsimage`;}
+        
+
 
 exports.resizeHotelPhoto=async(req,res,next)=>{
-    //console.log(req.files);
-    if(!req.files){
-       // console.log("in ! condition");
-        return next();}
-
-    // req.files.filename=`user-${req.params.id}-${Date.now()}.jpeg`;
-    // await sharp(req.files.buffer)
-    // .resize(1000,700)
-    // .toFormat('jpeg')
-    // .jpeg({quality:90})
-    // .toFile(`dev_data/hotels/${req.files.filename}`);
+   console.log(req.files);
+   if(req.files.image){ 
     req.body.image=[];
      await Promise.all(
-    req.files.map(async(file,i)=>{
+    req.files.image.map(async(file,i)=>{
     const filename=`hotels-${req.params.id}-${Date.now()}-${i+1}.jpeg`;
     await sharp(file.buffer)
     .resize(1000,700)
@@ -42,10 +57,55 @@ exports.resizeHotelPhoto=async(req,res,next)=>{
     req.body.image.push(`${req.protocol}://${req.get(
         "host"
       )}/api/v1/hotels/images/${filename}`);
-}))
-//console.log("after map ");
+}))}
+if(req.files['Rooms[0].roomsimage']){
+    const room = req.body.Rooms?.[0];
+    room.roomsimage = [];
+                await Promise.all(
+                    req.files['Rooms[0].roomsimage'].map(async (file,i) => {
+                    const filename = `rooms-${req.params.id}-${Date.now()}-${i + 1}.jpeg`;
+                    await sharp(file.buffer)
+                        .resize(1000, 700)
+                        .toFormat('jpeg')
+                        .jpeg({ quality: 90 })
+                        .toFile(`dev_data/rooms/${filename}`);
+                    room.roomsimage.push(`${req.protocol}://${req.get(
+                        "host"
+                        )}/api/v1/hotels/roomimages/${filename}`);
+                }));
+        
+}
     next();
 }
+// exports.resizeHotelroomPhoto = async (req, res, next) => {
+//     //console.log("req.body.Rooms ",req.files )
+//     const hotelId = req.params.id;
+//     const hotel = await Hotel.findById(hotelId);
+//     if (!req.files) {
+//         console.log("in file")
+//         return next();
+//     }
+
+//     // Iterate through the rooms in the request body and update their images
+//     hotel.Rooms.forEach(async (room, i) => {
+//         console.log("in array");
+//         await Promise.all(req.files.map(async (file, ) => {
+//             console.log("in 2 array")
+//             const filename = `rooms-${req.params.id}-${Date.now()}-${j + 1}.jpeg`;
+//             await sharp(file.buffer)
+//                 .resize(1000, 700)
+//                 .toFormat('jpeg')
+//                 .jpeg({ quality: 90 })
+//                 .toFile(`dev_data/rooms/${filename}`);
+//             // Append the image URL to the room's image array
+//             req.body.Rooms[i].image.push(`${req.protocol}://${req.get("host")}/api/v1/hotels/roomimages/${filename}`);
+//              console.log("req.body.Rooms[i].image",req.body.Rooms[i].image);
+//              if(j==2)return;
+//         }));
+//     });
+
+//     next();
+// }
 exports.sendImage = async (req, res, next) => {
     res.sendFile(
       path.resolve(`${__dirname}/../dev_data/hotels/${req.params.fileName}`)

@@ -1,4 +1,5 @@
 const express = require("express");
+const bodyParser = require('body-parser');
 const app = express();
 const hotelrouter=require('./routes/hotelRoutes');
 const userRouter = require("./routes/userRoutes");
@@ -15,6 +16,7 @@ const hpp = require("hpp");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const compression = require("compression");
+
 
 const limiter = rateLimit({
   max: 200,
@@ -62,6 +64,9 @@ app.post(
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true, limit: "10kb" }));
 app.use(express.json({ limit: "10kb" }));
+// app.use(bodyParser.json({ limit: "10kb" }));
+// // Parse URL-encoded bodies
+// app.use(bodyParser.urlencoded({ extended: true ,limit: "10kb"}));
 
 //Routes middleware
 app.use('/api/v1/hotels',hotelrouter);

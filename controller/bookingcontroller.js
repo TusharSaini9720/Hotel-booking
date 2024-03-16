@@ -4,7 +4,7 @@ const User=require('../models/userModel');
 const Booking=require('../models/bookingModel');
 exports.getcheckoutSession=async(req,res)=>{
   const hotel=await Hotel.findById(req.params.hotelid);
-  // console.log(hotel);
+   let price=hotel.totalPrice * 100*req.body.noofdays;
   const session=await stripe.checkout.sessions.create({
     payment_method_types:['card'],
      mode: 'payment',
@@ -12,9 +12,13 @@ exports.getcheckoutSession=async(req,res)=>{
     cancel_url:`${req.protocol}://${req.get("host")}/${req.params.hotelid}`,
     customer_email:req.user.email,
     client_reference_id:req.params.hotelid,
+    metadata: {
+      startingDate: req.body.startdate,
+      endingDate:req.body.enddate,
+    },
     line_items: [{
         price_data: {
-            currency: 'INR',
+            currency: 'usd',
             product_data: {
                 name: hotel.name,
                 description: hotel.About_hotel,
@@ -22,7 +26,7 @@ exports.getcheckoutSession=async(req,res)=>{
                    hotel.image[0]
                 ],
             },
-            unit_amount: hotel.totalPrice * 100,
+            unit_amount: price,
         },
         quantity: 1
     }]
@@ -37,9 +41,9 @@ const createBookingCheckout = async (session) => {
     const user = (await User.findOne({ email: session.customer_email }))
       .id;
     const price = session.amount_total / 100;
-    // const startingDate = session.metadata.startingDate;
-    // const services = session.metadata.services.split(",");
-    await Booking.create({ hotel, user, price});
+     const startingDate = session.metadata.startingDate;
+     const endingDate = session.metadata.endingDate;
+    await Booking.create({ hotel, user, price,startingDate,endingDate});
   };
   exports.webhookCheckout = async (req, res, next) => {
     const signature = req.headers["stripe-signature"];

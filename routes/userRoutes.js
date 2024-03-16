@@ -32,6 +32,8 @@ userRoutes.delete(
   authController.protect,
   authController.deleteHistory
 );
+userRoutes.get('/mybookings',authController.protect,userController.getMyBookings);
+userRoutes.get('/myreviews',authController.protect,userController.getMyReviews);
 
 userRoutes.delete("/deleteMe", authController.protect, authController.deleteMe);
 userRoutes.get(

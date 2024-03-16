@@ -51,24 +51,24 @@ const hotelSchema = new mongoose.Schema({
     }],
     required: [true, "A hotel must have rooms:"],
 },
-Rooms: [{
-  numberOfBeds: {
-    type: Number,
-    required: [true, "A Room must have beds:"],
-  },
-  price: {
-    type: Number,
-    required: [true, "A Room must have price:"],
-  },
-  image: {
-    type: [String],
-    required: [true, "A Room must have image:"],
-  },
-  capacity: {
-    type: Number,
-    required: [true, "A Room must have image:"],
-  }
-}],
+// Rooms: [{
+//   numberOfBeds: {
+//     type: Number,
+//     required: [true, "A Room must have beds:"],
+//   },
+//   price: {
+//     type: Number,
+//     required: [true, "A Room must have price:"],
+//   },
+//   roomsimage: {
+//     type: [String],
+//     required: [true, "A Room must have image:"],
+//   },
+//   capacity: {
+//     type: Number,
+//     required: [true, "A Room must have image:"],
+//   }
+// }],
     facility:[
         {
           type: String,

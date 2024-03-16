@@ -1,5 +1,5 @@
 import React from "react";
-import Filtersforlist from "../listpage/filtersforlist";
+import Filtersfordetail from "./filterfordetail";
 
 import Slider from "react-slick";
 
@@ -23,11 +23,18 @@ function Starter(props) {
   return (
     <div className="starter">
       <div className="left">
-        <Filtersforlist
+        <Filtersfordetail
+          price={props.price}
+          totalPrice={props.totalPrice}
+          id={props.id}
           name={props.city}
+          signedIn={props.signedIn} 
+          token={props.token} 
           startdate={props.startdate}
           enddate={props.enddate}
           guestsnumber={props.guestsnumber}
+          setnoofdays={props.setnoofdays}
+          noofdays={props.noofdays}
         />
       </div>
 
