@@ -83,17 +83,30 @@ function Filtersfordetail(props) {
             placeholder={props.guestsnumber}
             onChange={handleclickfornumber}
           ></input>
-        </div><div className="name1" style={{ backgroundColor:"white", borderRadius:"10px 10px" ,border: "solid 1px",
-  borderColor: "gray"}}>
-        <div  style={{ textAlign: "right", paddingRight: "7px", fontFamily: "Arial, sans-serif", color: "#333", backgroundColor:"white" }}>
-  <p>
-    <strong>Price for {props.noofdays} nights:</strong> <span style={{ color: "#007bff" ,fontSize:"large",fontWeight:"bolder"}} >${props.price * props.noofdays}/-</span>
-    <br />
-    <strong>Taxis price:</strong> <span style={{ color: "#28a745" ,fontSize:"large",fontWeight:"bolder"}}>${props.totalPrice * props.noofdays - props.price * props.noofdays}/-</span>
-    <br />
-    <strong>Total price:</strong> <span style={{ textAlign: "bottom",color: "#dc3545" ,fontSize:"140%",fontWeight:"bolder"}}>${props.totalPrice * props.noofdays}/-</span>
-  </p>
-</div></div>
+        </div>
+        <div className="name1" style={{ backgroundColor:"white", borderRadius:"10px", border: "solid 1px", borderColor: "gray",height:"110px"}}>
+  <div style={{ display: "flex", justifyContent: "space-between", paddingRight: "7px", fontFamily: "Arial, sans-serif", color: "#333", backgroundColor: "white", padding: "10px" }}>
+    <div style={{ textAlign: "left" }}>
+      <p>
+        <strong>Price for {props.noofdays} nights:</strong>
+        <br />
+        <strong>Taxes price:</strong>
+        <br />
+        <strong style={{fontSize:"140%",fontWeight:"bolder"}}>Total price:</strong>
+      </p>
+    </div>
+    <div style={{ textAlign: "right" }}>
+      <p>
+        <span style={{ color: "#007bff" ,fontSize:"large",fontWeight:"bolder"}} >${props.price * props.noofdays}/-</span>
+        <br />
+        <span style={{ color: "#28a745" ,fontSize:"large",fontWeight:"bolder"}}>${props.totalPrice * props.noofdays - props.price * props.noofdays}/-</span>
+        <br />
+        <span style={{ color: "#dc3545" ,fontSize:"120%",fontWeight:"bolder"}}>${props.totalPrice * props.noofdays}/-</span>
+      </p>
+    </div>
+  </div>
+</div>
+
         <div style={{alignItems:"center"}}>
         <Bookingform 
         hotelid={props.id} 

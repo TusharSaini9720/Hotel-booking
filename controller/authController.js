@@ -362,7 +362,6 @@ exports.deleteMe = async (req, res) => {
   });
 };
 exports.protect = async (req, res, next) => {
- // console.log("in protect");
   //1.Getting token and check if it's there
   let token;
   let freshUser;
@@ -445,7 +444,7 @@ exports.restrictTo = (...roles) => {
   //because arguments can not be passed to meddleware
   //so return a wrapper which is actual fucntion we want to create
   return (req, res, next) => {
-    if (!roles.includes(req.user.role)) {
+    if (!roles) {
       res.status(403).json({
         status: "failed",
         message: "You do not have the permission to perform this action",

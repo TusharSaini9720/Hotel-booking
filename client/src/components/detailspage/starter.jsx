@@ -43,7 +43,8 @@ function Starter(props) {
   style={{
     margin: width > 768 ? "4px 0px" : "20px 0px",
     padding: "10px",
-    borderRadius: "30px",
+    paddingLeft:"25px",
+   
     overflow: "hidden",
     position: "relative",
     
@@ -58,8 +59,8 @@ function Starter(props) {
             alt="Not available"
             style={{
               height: width > 768 ? "400px" : "320px",
-              width: "100%",
-              borderRadius: "20px",
+              width: "98%",
+             
             }}
           />
         </div>

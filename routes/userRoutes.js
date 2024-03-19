@@ -1,7 +1,10 @@
 const express = require("express");
 const userController = require("./../controller/userController");
 const authController = require("./../controller/authController");
+const reviewrouter=require('./reviewRoutes');
+const reviewcontroller=require('./../controller/reviewController');
 const userRoutes = express.Router();
+
 
 //for users
 userRoutes.get("/images/:fileName", userController.sendImage);
@@ -33,7 +36,7 @@ userRoutes.delete(
   authController.deleteHistory
 );
 userRoutes.get('/mybookings',authController.protect,userController.getMyBookings);
-userRoutes.get('/myreviews',authController.protect,userController.getMyReviews);
+userRoutes.get('/review', authController.protect,reviewcontroller.getallreview);
 
 userRoutes.delete("/deleteMe", authController.protect, authController.deleteMe);
 userRoutes.get(

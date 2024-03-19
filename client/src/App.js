@@ -11,6 +11,10 @@ import UpdatePassword from "./components/authentication/updatePassword";
 import { Route, Switch } from "react-router-dom";
 import NotFound from "./components/notfound/notfound";
 import ResetPassword from "./components/authentication/resetPassword";
+import UserProfile from './components/user/userprofile.jsx';
+import EdituserProfile from './components/user/edituserprofile';
+import UserBookings from './components/user/userbooking';
+import UserReviews from './components/user/userreview';
 
 function App() {
   const [signedIn, setsignedIn] = React.useState(false);
@@ -87,7 +91,29 @@ function App() {
           path="/updatePassword"
           component={() => <UpdatePassword token={token}/>}
         />
-
+      
+       <Route
+       exact
+            path="/user/profile"
+            component={()=>(<UserProfile user={user} setuser={setuser} signedIn={signedIn} sethistory={sethistory} token={token} />)}
+          />
+          <Route
+          exact
+            path="/user/updateProfile"
+            component={()=>(<EdituserProfile user={user} setuser={setuser} signedIn={signedIn} sethistory={sethistory} token={token}/>)
+            }
+          />
+          <Route
+          exact
+            path="/user/bookings"
+            component={()=>(<UserBookings user={user} signedIn={signedIn} sethistory={sethistory} token={token}/>)}
+          />
+          <Route
+          exact
+            path="/user/reviews"
+            component={()=>(<UserReviews user={user} signedIn={signedIn} sethistory={sethistory} token={token}/>)}
+          />
+            
         <Route exact path="/search" component={() => <List />} />
         <Route
           exact

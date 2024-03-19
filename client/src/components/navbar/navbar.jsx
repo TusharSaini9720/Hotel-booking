@@ -60,8 +60,9 @@ function NNavbar(props) {
                 </Nav.Link>
               </Nav>
             ) : (
-              <Nav>
+              <Nav style={{display:"flex"}}>
                 <MyProfile
+                
                   user={props.user}
                   sethistory={props.sethistory}
                   token={props.token}
@@ -77,6 +78,8 @@ function NNavbar(props) {
                       textDecoration: "none",
                       fontWeight: "550",
                       borderRadius: "2px",
+                      alignItems:"center",
+                      justifyContent:"center",
                     }}
                     onClick={() => signout()}
                   >

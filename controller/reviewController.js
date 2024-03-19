@@ -3,9 +3,12 @@ const factoryhandler=require('./factoryhandler');
 
 exports.getallreview=async(req,res)=>{
     try{
-        let filter={};
-        if(req.params.hotelId)filter={hotel:req.params.hotelId}
-        const review=await Review.find(filter);
+        let review;
+        if(req.params.hotelId)
+         review=await Review.find({hotel:req.params.hotelId});
+        else if(req.user)
+        review=await Review.find({user:req.user._id});
+    else review = await Review.find();
         res.status(200).json({
             status:'success',
             result:review.length,

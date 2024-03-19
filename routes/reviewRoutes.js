@@ -4,7 +4,8 @@ const authController = require('./../controller/authController');
 const reviewRoutes=express.Router({mergeParams:true});
 
  reviewRoutes
- .route('/').get(authController.protect,reviewcontroller.getallreview)
+ .route('/')
+ .get(reviewcontroller.getallreview)
  .post(authController.protect,reviewcontroller.addreview);
 
  reviewRoutes

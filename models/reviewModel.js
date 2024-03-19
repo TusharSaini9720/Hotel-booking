@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
 const Hotel=require('./hotelModel');
-
+const User=require('./userModel');
 const reviewschema=new mongoose.Schema({
     review:{
         type:String,
@@ -65,6 +65,7 @@ const reviewschema=new mongoose.Schema({
         path:"user",
         select:"name photo"
     });
+    this.populate({ path: "hotel", select: "name image" });
     next();
   });
 

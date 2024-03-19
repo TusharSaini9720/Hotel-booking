@@ -7,8 +7,17 @@ import { Link } from "react-router-dom";
 
 function MyProfile(props) {
   const [click, setclick] = React.useState(false);
+  const [count,setcount]=React.useState(0);
   const handleOver = (e) => {
+    if(count==0){
     setclick(true);
+    setcount(1);   
+  }
+  else{
+    setclick(false);
+    setcount(0);
+  }
+    
   };
   const handleLeave = (e) => {
     setclick(false);
@@ -35,27 +44,28 @@ function MyProfile(props) {
     <Nav.Link>
       <div
         class="dropdown"
-        onMouseOver={(e) => {
+        onClick={(e) => {
           handleOver(e);
         }}
-        onMouseLeave={(e) => {
-          handleLeave(e);
-        }}
+        // onClick={(e) => {
+        //   handleLeave(e);
+        // }}
       >
         <span style={{ padding: "10px 5px",
           cursor: "pointer",
           boxShadow: click ? "0px 0px 10px rgba(0, 0, 0, 0.5)" : "none",
           transition: "box-shadow 0.3s ease-in-out"}}>
-          My Profile{"  "}
+            My Profile{"  "}
           {click ? (
             <i class="fas fa-caret-up"></i>
           ) : (
+
             <i class="fas fa-caret-down"></i>
           )}
         </span>
         <ToggleDisplay show={click}>
           <div class="dropdown-content">
-            <p
+            {/* <p
               style={{
                 disply: "inline",
                 borderRadius: "50%",
@@ -78,9 +88,9 @@ function MyProfile(props) {
             </p>
             <p style={{ display: "inline", fontSize: "larger" }}>
               {props.user.email}
-            </p>
+            </p> */}
             <Link
-              to="/updatePassword"
+              to="/user/profile"
               style={{
                 textDecoration: "none",
                 width: "100%",
@@ -100,7 +110,55 @@ function MyProfile(props) {
                   margin: 0,
                 }}
               >
-                Update Password
+                My profile
+              </p>
+            </Link>
+            <Link
+              to="/user/reviews"
+              style={{
+                textDecoration: "none",
+                width: "100%",
+                fontSize: "larger",
+                textAlign: "center",
+                fontWeight: "500",
+                backgroundColor: "whitesmoke",
+                color: "darkorange",
+                padding: "5px 0",
+                borderRadius: "5px",
+                borderBottom: "solid darkorange 4px",
+                margin: 0,
+              }}
+            >
+              <p
+                style={{
+                  margin: 0,
+                }}
+              >
+                My reviews
+              </p>
+            </Link>
+            <Link
+              to="/user/bookings"
+              style={{
+                textDecoration: "none",
+                width: "100%",
+                fontSize: "larger",
+                textAlign: "center",
+                fontWeight: "500",
+                backgroundColor: "whitesmoke",
+                color: "darkorange",
+                padding: "5px 0",
+                borderRadius: "5px",
+                borderBottom: "solid darkorange 4px",
+                margin: 0,
+              }}
+            >
+              <p
+                style={{
+                  margin: 0,
+                }}
+              >
+                My bookings
               </p>
             </Link>
             <p

@@ -39,7 +39,7 @@ exports.resizeUserPhoto = async(req,res,next)=>{
 }
 exports.sendImage =async (req, res, next) => {
   res.sendFile(
-    path.resolve(`${__dirname}/../Images/users/${req.params.fileName}`)
+    path.resolve(`${__dirname}/../dev_data/users/${req.params.fileName}`)
   );
 };
 exports.getAllUser = async (req, res) => {
@@ -116,17 +116,18 @@ exports.getMe = (req, res, next) => {
 
 exports.getMyBookings = async (req, res, next) => {
   try{
+    console.log("in try of book");
     const currentDate = new Date();
   const currentBookings = await Booking.find({
-    customer: req.user.id,
+    user: req.user.id,
     startingDate: { $lte: currentDate },
     endingDate: { $gte: currentDate },
-  }).populate({ path: "hotel", select: "name photo _id" });
+  }).populate({ path: "hotel", select: "name image _id" });
   
   const pastBookings = await Booking.find({
     user: req.user.id,
     endingDate: { $lt: currentDate },
-  }).populate({ path: "hotel", select: "name photo _id" });
+  }).populate({ path: "hotel", select: "name image _id" });
 
   res.status(200).json({
     status: "success",
