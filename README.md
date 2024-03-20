@@ -1,3 +1,3 @@
 # Hotel-Booking-Guide
 
-Link for site: (https://hotel-booking-guide.onrender.com/)
+Link for site: (https://hotel-booking-sp0k.onrender.com/)

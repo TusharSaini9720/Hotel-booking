@@ -2,7 +2,6 @@
   "name": "hotel_booking",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3000",
   "dependencies": {
     "@babel/runtime": "^7.15.4",
     "@emotion/react": "^11.11.4",
