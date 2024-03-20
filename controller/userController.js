@@ -39,7 +39,7 @@ exports.resizeUserPhoto = async(req,res,next)=>{
 }
 exports.sendImage =async (req, res, next) => {
   res.sendFile(
-    path.resolve(`${__dirname}/../dev_data/users/${req.params.fileName}`)
+    path.resolve(`${__dirname}/../dev_data/user/${req.params.fileName}`)
   );
 };
 exports.getAllUser = async (req, res) => {
