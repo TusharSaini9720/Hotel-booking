@@ -22,38 +22,14 @@ const createSendToken = async(user, statusCode, res) => {
   //hide password even when creating new user though cookie is not saved
   user.password = undefined;
   //console.log(res.headers);
-  try {
+ 
    // console.log("in email try block")
-    await sendEmail({
-      email: user.email,
-      subject: `Sign up successfully on WebMaker Keep growing`,
-      message: `Welcome ${user.name}!
-
-Welcome to Hotel Booking Guide! We're thrilled to have you as a new member of our community.
-
-Here are a few things you can do now that you're signed up:
-
-1. Browse and book from our wide selection of hotels around the world.
-2. Save your favorite hotels and access them easily whenever you want.
-3. Receive exclusive deals and discounts available only to our members.
-4. Manage your bookings and view your booking history.
-5. Explore our blog for travel tips, destination guides, and more.
-
-If you have any questions or need assistance, Contact us now.
-
-Thank you for choosing Hotel Booking Guide. We're excited to help you plan your next adventure! `,
-    });
     res.status(statusCode).json({
       status: "success",
       token, 
       data: { user: user },
     });
-  } catch (err) {
-    res.status(200).json({
-      status: "failed",
-      message: "Enter valid email address" +err,
-    });
-  }
+  
 };
 
 const signToken = id => {
