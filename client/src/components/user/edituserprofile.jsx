@@ -37,8 +37,8 @@ function Edituserprofile(props) {
       headers: { "Content-Type": "multipart/form-data" },
     })
       .then((res) => {
-        console.log("res.data.user",res.data.data.user);
-        props.setuser(res.data.data.user);
+        console.log("res.data.user",res.data);
+        props.setuser(res.data);
        
         seterror("Image updated successfully! ");
         setstate3("Upload");
@@ -60,7 +60,7 @@ function Edituserprofile(props) {
       data: dataToSend,
     })
       .then((res) => {
-        props.setuser(res.data.user);
+        props.setuser(res.data);
         seterror("Data updated successfully! ");
         setstate1("Save Changes");
       })

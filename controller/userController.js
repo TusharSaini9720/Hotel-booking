@@ -90,9 +90,36 @@ exports.getUser = async (req, res) => {
 
 exports.updateUser = async (req, res) => {
   try {
-    const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
+    // const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, {
+    //   new: true,
+    // });
+    // 1) Create error if user POSTs password data
+  if (req.body.password || req.body.passwordConfirm) {
+    res.status(400).json({
+      status: "failed",
+      message: "This route is not for password updates. Please use /updatePassword.",
     });
+    return;
+  }
+  // 2) Filtered out unwanted fields names that are not allowed to be updated
+  const filteredBody = filterObj(
+    req.body,
+    "name",
+    "email",
+  );
+  if (req.file)
+    filteredBody.photo = `${req.protocol}://${req.get(
+      "host"
+    )}/api/v1/users/images/${req.file.filename}`;
+
+  const updatedUser = await Customer.findByIdAndUpdate(
+    req.user.id,
+    filteredBody,
+    {
+      new: true, //returns new object
+      runValidators: true,
+    }
+  );
     res.status(200).json({
       status: "success",
       updatedUser,
