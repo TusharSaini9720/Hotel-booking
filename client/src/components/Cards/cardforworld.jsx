@@ -7,14 +7,12 @@ function Cardforworld(props) {
     <Link
       style={{ textDecoration: "inherit", color: "inherit" }}
       to={{
-        pathname: "/details",
+        pathname: "/search",
         state: {
-          name: 'India',
+          cityname: 'India',
+          startdate: moment().format("yyyy-MM-DD"),
+          enddate: moment().add(1, "days").format("yyyy-MM-DD"),
           guestsnumber: 2,
-          startdate: moment().format("YYYY-MM-DD"),
-          enddate: moment().add(1, "days").format("YYYY-MM-DD"),
-
-          hotel_id: props.hotel_id,
         },
       }}
     >
