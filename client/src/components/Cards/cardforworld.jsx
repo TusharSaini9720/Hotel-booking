@@ -9,7 +9,7 @@ function Cardforworld(props) {
       to={{
         pathname: "/details",
         state: {
-          name: props.country,
+          name: 'India',
           guestsnumber: 2,
           startdate: moment().format("YYYY-MM-DD"),
           enddate: moment().add(1, "days").format("YYYY-MM-DD"),

@@ -88,20 +88,20 @@ function Filtersfordetail(props) {
   <div style={{ display: "flex", justifyContent: "space-between", paddingRight: "7px", fontFamily: "Arial, sans-serif", color: "#333", backgroundColor: "white", padding: "10px" }}>
     <div style={{ textAlign: "left" }}>
       <p>
-        <strong>Price for {props.noofdays} nights:</strong>
+        <strong>Price for {props.noofdays} Night:</strong>
         <br />
-        <strong>Taxes price:</strong>
+        <strong>Total Taxes:</strong>
         <br />
         <strong style={{fontSize:"140%",fontWeight:"bolder"}}>Total price:</strong>
       </p>
     </div>
     <div style={{ textAlign: "right" }}>
       <p>
-        <span style={{ color: "#007bff" ,fontSize:"large",fontWeight:"bolder"}} >${props.price * props.noofdays}/-</span>
+        <span style={{ color: "#28a745" ,fontSize:"large",fontWeight:"bolder"}} >${props.price * props.noofdays}/-</span>
         <br />
         <span style={{ color: "#28a745" ,fontSize:"large",fontWeight:"bolder"}}>${props.totalPrice * props.noofdays - props.price * props.noofdays}/-</span>
         <br />
-        <span style={{ color: "#dc3545" ,fontSize:"120%",fontWeight:"bolder"}}>${props.totalPrice * props.noofdays}/-</span>
+        <span style={{ color: "#28a745" ,fontSize:"120%",fontWeight:"bolder"}}>${props.totalPrice * props.noofdays}/-</span>
       </p>
     </div>
   </div>

@@ -32,8 +32,7 @@ function AboutMe() {
         Maid booking
       </p>
       <p style={{ fontStyle: "italic" }}>
-        I am a Full Stack Web Developer. Currently, I am pursuing my B.Tech
-        degree from COER College, Roorkee. I have great passion for 
+        I am a Full Stack Web Developer. I have great passion for 
         Website designing or developing. And I love to do things as
         perfectly as I can.
       </p>
