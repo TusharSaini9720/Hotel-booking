@@ -29,7 +29,7 @@ function AboutMe() {
           fontStyle: "oblique",
         }}
       >
-        Tushar Saini
+        Maid booking
       </p>
       <p style={{ fontStyle: "italic" }}>
         I am a Full Stack Web Developer. Currently, I am pursuing my B.Tech

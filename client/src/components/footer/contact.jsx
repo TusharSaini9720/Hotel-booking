@@ -53,10 +53,10 @@ function Contact() {
           UttarPradesh, India
         </p>
         <p style={{ fontStyle: "italic" }}>
-        <MdEmail style={{ color: "white", fontSize: "large" }}/>&nbsp;&nbsp;itsaini9720@gmail.com
+        <MdEmail style={{ color: "white", fontSize: "large" }}/>&nbsp;&nbsp;Maid_booking@gmail.com
         </p>
         <p>
-        <FaPhoneAlt style={{ color: "white", fontSize: "large" }}/>&nbsp;&nbsp;9720556084
+        <FaPhoneAlt style={{ color: "white", fontSize: "large" }}/>&nbsp;&nbsp;9711225490
         </p>
       </div>
       <div className="contactform">
