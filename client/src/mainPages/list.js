@@ -31,6 +31,13 @@ function List(props) {
         <div style={{ position: "relative" }}>
           {
             <Hotellist
+            signedIn={props.signedIn}
+        setsignedIn={props.setsignedIn}
+        sethistory={props.sethistory}
+        token={props.token}
+        settoken={props.settoken}
+        user={props.user}
+              setuser={props.setuser}
               cityname={cityname}
               startdate={startdate}
               enddate={enddate}

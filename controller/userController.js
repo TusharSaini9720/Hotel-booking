@@ -78,7 +78,7 @@ exports.getUser = async (req, res) => {
     const user = await User.findById({ _id: req.params.id });
     res.status(200).json({
       status: "success",
-      user,
+      User:  user,
     });
   } catch (err) {
     res.status(200).json({
@@ -137,7 +137,6 @@ exports.deleteUser=factoryhandler.deleteOne(User);
 
 exports.getMe = (req, res, next) => {
   req.params.id = req.user.id;
-
   next();
 };
 

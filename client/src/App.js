@@ -39,10 +39,13 @@ function App() {
           path="/"
           component={() => (
             <Home
-              signedIn={signedIn}
-              history={history}
-              token={token}
-              sethistory={sethistory}
+            signedIn={signedIn}
+        setsignedIn={setsignedIn}
+        sethistory={sethistory}
+        token={token}
+        settoken={settoken}
+        user={user}
+        setuser={setuser}
             />
           )}
         />
@@ -114,7 +117,18 @@ function App() {
             component={()=>(<UserReviews user={user} signedIn={signedIn} sethistory={sethistory} token={token}/>)}
           />
             
-        <Route exact path="/search" component={() => <List />} />
+        <Route
+         exact path="/search"
+          component={() => 
+        <List 
+        signedIn={signedIn}
+        setsignedIn={setsignedIn}
+        sethistory={sethistory}
+        token={token}
+        settoken={settoken}
+        user={user}
+        setuser={setuser}
+        />} />
         <Route
           exact
           path="/details"
