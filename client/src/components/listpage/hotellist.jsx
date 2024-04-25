@@ -4,13 +4,12 @@ import axios from "axios";
 import Sortby from "./sortby";
 import Loader from "react-loader-spinner";
 import NotFound from "../notfound/notfound";
-import { Link, useHistory } from "react-router-dom";
+
 function Hotellist(props) {
   //console.log(props);
   //state for sorting
  // const [sortby, setsortby] = React.useState("BEST_SELLER");
   const query = props.cityname;
-  const history = useHistory();
   //const sortby = props.sortby;
   const guestsnumber = props.guestsnumber;
   const startdate = props.startdate;
@@ -27,40 +26,7 @@ const url='/api/v1/hotels?country=India';
 
 
   React.useEffect(() => {
-    if (!props.signedIn) {
-      alert("You are logged In as a test customer. ");
-      axios({
-        method: "POST",
-        url: "/api/v1/users/login",
-        data: { email: "testing@gmail.com", password: "123456" },
-      })
-        .then((res) => {
-          props.sethistory(res.data.data.user.history);
-          props.settoken(res.data.token);
-          props.setsignedIn(true);
-          props.setuser(res.data.data.user);
-          history.push("/");
-          axios({
-            method: "GET",
-            url: url,
-            params: props.filters,
-          })
-            .then((res) => {
-              sethotelslist(res.data.data.Hotels);
-          
-            })
-            .catch((err) => {
-              sethotelslist(["notfound"]);
-              //show error component
-              console.log(err);
-            });
-        })
-        .catch((err) => {
-          alert(
-            "Something went wrong while logging in as test user! please try again later."
-          );
-        });
-      } else{ axios({method:'GET',url:url, params: props.filters})
+     axios({method:'GET',url:url, params: props.filters})
     .then((res)=>{
      // console.log("res.data.data.Hotels",res.data.data.Hotels)
       sethotelslist(res.data.data.Hotels);
@@ -68,7 +34,7 @@ const url='/api/v1/hotels?country=India';
       sethotelslist(["notfound"]);
       console.log(err);
     })
-  }}, [
+  }, [
     destinationId,
     guestsnumber,
     startdate,

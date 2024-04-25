@@ -17,23 +17,6 @@ function NNavbar(props) {
     history.push("/");
     return;
   };
-  React.useEffect(() => {
-   axios({
-      method: "GET",
-      url: "/api/v1/users/me/",
-    })
-      .then((res) => {
-        props.sethistory(res.data.User.history);
-       //  props.settoken(res.data.token);
-       
-        props.setsignedIn(true);
-        props.setuser(res.data.User);
-        history.push("/");
-      })
-      .catch((err) => {
-        console.log("User is not logged In! ");
-      });
-  }, []);
   return (
     <>
       <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
