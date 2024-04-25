@@ -41,6 +41,7 @@ function App() {
             <Home
             signedIn={signedIn}
         setsignedIn={setsignedIn}
+        history={history}
         sethistory={sethistory}
         token={token}
         settoken={settoken}
