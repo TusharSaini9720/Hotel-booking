@@ -18,7 +18,7 @@ function NNavbar(props) {
     return;
   };
   React.useEffect(() => {
-    axios({
+  if(props.token!=""){  axios({
       method: "GET",
       url: "/api/v1/users/me/",
     })
@@ -33,7 +33,7 @@ function NNavbar(props) {
       .catch((err) => {
         console.log("User is not logged In! ");
       });
-  }, []);
+  }}, []);
   return (
     <>
       <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
